@@ -36,6 +36,35 @@ function buildQuiz() {
 
 function showResults() {
 
+  //gather answer containers from our quiz 
+  const answerContainers = quizContainer.querySelectorAll('.options');
+
+  //keep track of user's answers
+  let numCorrect = 0;
+
+  //for each question
+  questions.forEach((currentQuestion, questionNumber) => {
+
+    //find selected answer 
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    //if answer is correct 
+    if(userAnswer === currentQuestion.answer) {
+      numCorrect++;
+
+      //color the answers green
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    } else {
+      //if wrong or blank, color it red
+      answerContainers[questionNumber].style.color = 'red';
+    };
+    
+  });
+  //show correct answers from total
+  resultsContainer.innerHTML=`${numCorrect} out of ${questions.length}`;
+
 };
 
 //Variables
@@ -48,8 +77,8 @@ const questions = [{
   "image": "",
   "options": [
     "A major", "C major", "E major", "F# major"
-  ],
-  "answer": "E major"
+],
+  "answer": "E major",
 },
 
 {
@@ -58,7 +87,7 @@ const questions = [{
   "options": [
     "F major", "G major", "Eb major", "D major"
   ],
-  "answer": "F major"
+  "answer": "F major",
 },
 
 {
@@ -67,7 +96,7 @@ const questions = [{
   "options": [
     "Bb minor", "C minor", "Db minor", "Ab minor"
   ],
-  "answer": "Ab minor"
+  "answer": "Ab minor",
 },
 
 {
