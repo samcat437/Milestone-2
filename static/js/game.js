@@ -1,5 +1,5 @@
 //Functions
-
+(function() {
 function buildQuiz() {
   // variable to store the HTML output
   const output = [];
@@ -25,9 +25,10 @@ function buildQuiz() {
 
   //add this question and its answers to the output 
   output.push(
-    `<div class="question">${currentQuestion.question}</div>
-    <div class="options">${options.join('')}</div>
-    `
+    `<div class="slide">
+      <div class="question">${currentQuestion.question}</div>
+      <div class="options">${options.join('')}</div>
+    </div>`
   );
 
   quizContainer.innerHTML = output.join('');
@@ -67,6 +68,32 @@ function showResults() {
 
 };
 
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active-slide');
+  slides[n].classList.add('active-slide');
+  currentSlide = n;
+  if(currentSlide === 0) {
+    previousButton.style.display = 'none';
+  } else {
+    previousButton.style.display = 'inline-block';
+  } ;
+  if(currentSlide === slides.length-1) {
+    nextButton.style.display = 'none';
+    submitButton.style.display = 'inline-block';
+  } else {
+    nextButton.style.display = 'inline-block';
+    submitButton.style.display = 'none';
+  };
+};
+
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+};
+
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+};
+
 //Variables
 
 const quizContainer = document.getElementById('quiz');
@@ -75,91 +102,91 @@ const submitButton = document.getElementById('submit');
 const questions = [{
   "question": "What major key is this?",
   "image": "",
-  "options": [
-    "A major", "C major", "E major", "F# major"
-],
-  "answer": "E major",
+  "options": {
+    a: "A major", b: "C major", c: "E major", d: "F# major"
+  },
+  "answer": "c",
 },
 
 {
   "question": "What major key is this?",
   "image": "",
-  "options": [
-    "F major", "G major", "Eb major", "D major"
-  ],
-  "answer": "F major",
+  "options": {
+    a: "F major", b: "G major", c: "Eb major", d: "D major"
+  },
+  "answer": "a",
 },
 
 {
   "question": "What minor key is this?",
   "image": "",
-  "options": [
-    "Bb minor", "C minor", "Db minor", "Ab minor"
-  ],
-  "answer": "Ab minor",
+  "options": {
+    a: "Bb minor", b: "C minor", c: "Db minor", d: "Ab minor"
+},
+  "answer": "d",
 },
 
 {
   "question": "What major key is this?",
   "image": "",
-  "options": [
-    "C major", "E major", "F major", "C# major"
-  ],
-  "answer": "C# major"
+  "options": {
+    a: "C major", b: "E major", c: "F major", d: "C# major"
+  },
+  "answer": "d"
 },
 
 {
   "question": "What minor key is this?",
   "image": "",
-  "options": [
-    "F minor", "D minor", "C minor", "Eb minor"
-  ],
-  "answer": "Eb minor"
+  "options": {
+    a: "F minor", b: "D minor", c: "C minor", d: "Eb minor"
+  },
+  "answer": "d"
 },
 
 {
   "question": "What major key is this?",
   "image": "",
-  "options": [
-    "D major", "A major", "B major", "F# major"
-  ],
-  "answer": "A major"
+  "options": {
+    a: "D major", b: "A major", c: "B major", d: "F# major"
+  },
+  "answer": "b"
 },
 
 {
   "question": "What minor key is this?",
   "image": "",
-  "options": [
-    "B minor", "G minor", "E minor", "F minor"
-  ],
-  "answer": "F minor"
+  "options": {
+    a: "B minor", b: "G minor", c: "E minor", d: "F minor"
+  },
+  "answer": "d"
 },
 
 {
   "question": "What minor key is this?",
   "image": "",
-  "options": [
-    "Ab minor", "B minor", "G minor", "C# minor"
-  ],
-  "answer": "G minor"
+  "options": {
+    a: "Ab minor", b: "B minor", c: "G minor", d: "C# minor"
+  },
+  "answer": "c"
 },
 
 {
   "question": "What major key is this?",
   "image": "",
-  "options": [
-    "C# major", "D major", "B major", "A major"
-  ],
-  "answer": "A major"
+  "options": {
+    a: "C# major", b: "D major", c: "B major", d: "A major"
+  },
+  "answer": "d"
 },
 
 {
   "question": "What minor key is this?",
   "image": "",
-  "options": [
-    "Bb minor", "C minor", "A minor", "F minor"
-  ],
-  "answer": "C minor"
+  "options": {
+    a: "Bb minor", b: "C minor", c: "A minor", d: "F minor"
+  },
+  "answer": "b"
 }
 
 ];
@@ -168,5 +195,17 @@ const questions = [{
 //display quiz right away
 buildQuiz();
 
+//Pagination
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+//show the first slide
+showSlide(currentSlide);
+
 //on submit show results
 submitButton.addEventListener('click', showResults);
+previousButton.addEventListener('click', showPreviousSlide);
+nextButton.addEventListener('click', showNextSlide);
+})();
