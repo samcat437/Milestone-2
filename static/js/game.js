@@ -37,7 +37,7 @@ function buildQuiz() {
 
 function showResults() {
 
-  //gather answer containers from our quiz 
+  //gather answer containers from quiz 
   const answerContainers = quizContainer.querySelectorAll('.options');
 
   //keep track of user's answers
@@ -101,7 +101,7 @@ const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 const questions = [{
   "question": "What major key is this?",
-  "image": "",
+  "image": "static/images/E major.png",
   "options": {
     a: "A major", b: "C major", c: "E major", d: "F# major"
   },
