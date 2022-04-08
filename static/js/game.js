@@ -11,7 +11,7 @@
       const myImages = currentQuestion.image;
       let text = "";
       for (let i = 0; i < myImages.length; i++) {
-        text += myImages[i].src + "<br>";
+        text += myImages + "<br>";
       };
 
       //variable to store the list of possible answers
@@ -43,31 +43,31 @@
     });
   };
 
+  // function checkAnswer() {
+  //   //gather answer containers from current question
+  //   const currentQuestionAnswerContainers = quizContainer.querySelectorAll('.options');
+
+  //   //for the current question
+  //   questions.forEach((currentQuestion, questionNumber) => {
+  //     //find the answer 
+  //     const currentUserAnswerContainer = currentQuestionAnswerContainers[n]; 
+  //     const selector = `input[name=question${questionNumber}]:checked`;
+  //     const currentUserAnswer = (currentUserAnswerContainer.querySelector(selector) || {}).value;
+
+  //     if (currentUserAnswer === currentQuestion.answer) {
+
+  //       //color the answers green
+  //       currentQuestionAnswerContainers[questionNumber].style.color = 'lightgreen';
+  //     } else {
+  //       //if wrong or blank, color it red
+  //       currentQuestionAnswerContainers[questionNumber].style.color = 'red';
+  //     };
+
+  //   });
+  // };
+
   function checkAnswer() {
-    //gather answer containers from current question
-    const currentQuestionAnswerContainers = quizContainer.querySelectorAll('.options');
-
-    //for the current question
-    questions.forEach((currentQuestion, questionNumber) => {
-      //find the answer 
-      const currentUserAnswerContainer = currentQuestionAnswerContainers[n]; 
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const currentUserAnswer = (currentUserAnswerContainer.querySelector(selector) || {}).value;
-
-      if (currentUserAnswer === currentQuestion.answer) {
-
-        //color the answers green
-        currentQuestionAnswerContainers[questionNumber].style.color = 'lightgreen';
-      } else {
-        //if wrong or blank, color it red
-        currentQuestionAnswerContainers[questionNumber].style.color = 'red';
-      };
-
-    });
-  };
-
-  function showResults() {
-
+    
     //gather answer containers from quiz 
     const answerContainers = quizContainer.querySelectorAll('.options');
 
@@ -92,10 +92,11 @@
         //if wrong or blank, color it red
         answerContainers[questionNumber].style.color = 'red';
       };
-
+      
     }); 
     //show correct answers from total
-    resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
+    resultsContainer.innerHTML = `Correct Answers: ${numCorrect} out of ${questions.length}`;
+    
   };
 
   function showSlide(n) {
