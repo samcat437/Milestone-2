@@ -7,8 +7,16 @@ function buildQuiz() {
   //for each question
   questions.forEach((currentQuestion, questionNumber) => {
 
+  //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_doc_images2
+    const myImages = currentQuestion.image;
+      let text = "";
+      for (let i = 0; i < myImages.length; i++) {
+      text +=  myImages[i].src + "<br>";
+    };
+
   //variable to store the list of possible answers
   const options = [];
+
   
     //add for each available answer
   for(letter in currentQuestion.options){
@@ -26,6 +34,7 @@ function buildQuiz() {
   //add this question and its answers to the output 
   output.push(
     `<div class="slide">
+      <div class="image">${currentQuestion.image}</div>
       <div class="question">${currentQuestion.question}</div>
       <div class="options">${options.join('')}</div>
     </div>`
@@ -99,9 +108,10 @@ function showPreviousSlide() {
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
-const questions = [{
+const questions = [
+{
   "question": "What major key is this?",
-  "image": "static/images/E major.png",
+  "image": `<img src="../static/images/e-major.png"/>`,
   "options": {
     a: "A major", b: "C major", c: "E major", d: "F# major"
   },
@@ -110,7 +120,7 @@ const questions = [{
 
 {
   "question": "What major key is this?",
-  "image": "",
+  "image": `<img src="../static/images/f-major.png"/>`,
   "options": {
     a: "F major", b: "G major", c: "Eb major", d: "D major"
   },
@@ -119,7 +129,7 @@ const questions = [{
 
 {
   "question": "What minor key is this?",
-  "image": "",
+  "image": `<img src="../static/images/c-flat-major.png"/>`,
   "options": {
     a: "Bb minor", b: "C minor", c: "Db minor", d: "Ab minor"
 },
@@ -128,7 +138,7 @@ const questions = [{
 
 {
   "question": "What major key is this?",
-  "image": "",
+  "image": `<img src="../static/images/c-sharp-major.png"/>`,
   "options": {
     a: "C major", b: "E major", c: "F major", d: "C# major"
   },
@@ -137,7 +147,7 @@ const questions = [{
 
 {
   "question": "What minor key is this?",
-  "image": "",
+  "image": `<img src="../static/images/g-flat-major.png"/>`,
   "options": {
     a: "F minor", b: "D minor", c: "C minor", d: "Eb minor"
   },
@@ -146,7 +156,7 @@ const questions = [{
 
 {
   "question": "What major key is this?",
-  "image": "",
+  "image": `<img src="../static/images/a-major.png"/>`,
   "options": {
     a: "D major", b: "A major", c: "B major", d: "F# major"
   },
@@ -155,7 +165,7 @@ const questions = [{
 
 {
   "question": "What minor key is this?",
-  "image": "",
+  "image": `<img src="../static/images/a-flat-major.png"/>`,
   "options": {
     a: "B minor", b: "G minor", c: "E minor", d: "F minor"
   },
@@ -164,7 +174,7 @@ const questions = [{
 
 {
   "question": "What minor key is this?",
-  "image": "",
+  "image": `<img src="../static/images/b-flat-major.png"/>`,
   "options": {
     a: "Ab minor", b: "B minor", c: "G minor", d: "C# minor"
   },
@@ -173,16 +183,16 @@ const questions = [{
 
 {
   "question": "What major key is this?",
-  "image": "",
+  "image": `<img src="../static/images/e-major.png"/>`,
   "options": {
     a: "C# major", b: "D major", c: "B major", d: "A major"
   },
-  "answer": "d"
+  "answer": "c"
 },
 
 {
   "question": "What minor key is this?",
-  "image": "",
+  "image": `<img src="../static/images/e-flat-major.png"/>`,
   "options": {
     a: "Bb minor", b: "C minor", c: "A minor", d: "F minor"
   },
