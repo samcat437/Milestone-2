@@ -1,15 +1,72 @@
-startGame() {
-    const display = []; 
+function startGame() {
 
-    questions.forEach((i, j) => {
-        const questionImage = i.image;
-        let displayImage= "";
-        for (i=0; i < questionImage.length; i++) {
-            displayImage += questionImage + "</br>";
-        };
-    )};
+  //variable to store HTML output
+  const display = [];
+
+  questions.forEach((currentQuestion, questionNumber) => {
+    const questionImage = currentQuestion.image;
+    let displayImage = "";
+    for (i = 0; i < questionImage.length; i++) {
+      displayImage += questionImage + "<br>";
+    };
+
+    //variable to store the list of possible answers
+    const options = [];
+
+    for (letter in currentQuestion.options) {
+
+      options.push(
+        `<label>
+      <input type="radio" name="question${questionNumber}" value="${letter}">
+      ${letter} :
+      ${currentQuestion.options[letter]}
+    </label>`
+      );
+    };
+
+    display.push(
+      `<div class="slide">
+    <div class="image">${currentQuestion.image}</div>
+    <div class="question">${currentQuestion.question}</div>
+    <div class="options">${options.join('')}</div>
+  </div>`
+    );
+
+    quizContainer.innerHTML = display.join('');
+  });
 };
 
+function showSlide(number) {
+  slides[currentSlide].classList.remove('active-slide');
+  slides[number].classList.add('active-slide');
+  currentSlide = number;
+  if (currentSlide === 0) {
+    submitButton.style.display = 'none';
+    nextButton.style.display = 'inline-block';
+    checkAnswerButton.style.display = 'inline-block';
+  };
+
+  if (currentSlide === slides.length-1) {
+    nextButton.style.display = 'none';
+    checkAnswerButton.style.display = 'inline-block';
+    submitButton.style.display = 'inline-block';
+  } else {
+    nextButton.style.display = 'inline-block';
+    submitButton.style.display = 'none';
+  };
+};
+
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}; 
+
+//Variables
+
+const quizContainer = document.getElementById('quiz');
+const startButton = document.getElementById('start');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+const checkAnswerButton = document.getElementById('check');
 const questions = [{
     "question": "What major key is this?",
     "image": `<img src="../static/images/e-major.png"/>`,
@@ -132,4 +189,10 @@ const questions = [{
 
 ];
 
-startGame();
+//Pagination
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+//Event listeners 
+startButton.addEventListener('click', startGame);

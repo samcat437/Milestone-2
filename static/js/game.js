@@ -263,7 +263,6 @@
   //show the first slide
   showSlide(currentSlide);
 
-  //on submit show results
   checkAnswerButton.addEventListener('click', checkAnswer);
   nextButton.addEventListener('click', showNextSlide);
   submitButton.addEventListener('click', showResults);
