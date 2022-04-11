@@ -1,5 +1,5 @@
 function startGame() {
-
+  console.log("Hi");
   //variable to store HTML output
   const display = [];
 
@@ -36,10 +36,11 @@ function startGame() {
   });
 };
 
-function showSlide(number) {
+function showSlide(n) {
+  currentSlide = n;
   slides[currentSlide].classList.remove('active-slide');
-  slides[number].classList.add('active-slide');
-  currentSlide = number;
+  slides[n].classList.add('active-slide');
+
   if (currentSlide === 0) {
     submitButton.style.display = 'none';
     nextButton.style.display = 'inline-block';
@@ -193,6 +194,8 @@ const questions = [{
 const nextButton = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
+
+showNextSlide(currentSlide);
 
 //Event listeners 
 startButton.addEventListener('click', startGame);
