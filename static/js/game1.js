@@ -1,5 +1,5 @@
 function startGame() {
-  console.log("Hi");
+  
   //variable to store HTML output
   const display = [];
 
@@ -25,41 +25,41 @@ function startGame() {
     };
 
     display.push(
-      `<div class="slide">
+      `
     <div class="image">${currentQuestion.image}</div>
     <div class="question">${currentQuestion.question}</div>
     <div class="options">${options.join('')}</div>
-  </div>`
+  `
     );
 
     quizContainer.innerHTML = display.join('');
   });
 };
 
-function showSlide(n) {
-  currentSlide = n;
-  slides[currentSlide].classList.remove('active-slide');
-  slides[n].classList.add('active-slide');
+// function showSlide(n) {
+//   currentSlide = n;
+//   slides[currentSlide].classList.remove('active-slide');
+//   slides[n].classList.add('active-slide');
 
-  if (currentSlide === 0) {
-    submitButton.style.display = 'none';
-    nextButton.style.display = 'inline-block';
-    checkAnswerButton.style.display = 'inline-block';
-  };
+//   if (currentSlide === 0) {
+//     submitButton.style.display = 'none';
+//     nextButton.style.display = 'inline-block';
+//     checkAnswerButton.style.display = 'inline-block';
+//   };
 
-  if (currentSlide === slides.length-1) {
-    nextButton.style.display = 'none';
-    checkAnswerButton.style.display = 'inline-block';
-    submitButton.style.display = 'inline-block';
-  } else {
-    nextButton.style.display = 'inline-block';
-    submitButton.style.display = 'none';
-  };
-};
+//   if (currentSlide === slides.length-1) {
+//     nextButton.style.display = 'none';
+//     checkAnswerButton.style.display = 'inline-block';
+//     submitButton.style.display = 'inline-block';
+//   } else {
+//     nextButton.style.display = 'inline-block';
+//     submitButton.style.display = 'none';
+//   };
+// };
 
-function showNextSlide() {
-  showSlide(currentSlide + 1);
-}; 
+// function showNextSlide() {
+//   showSlide(currentSlide + 1);
+// }; 
 
 //Variables
 
@@ -190,12 +190,12 @@ const questions = [{
 
 ];
 
-//Pagination
-const nextButton = document.getElementById("next");
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+// //Pagination
+// const nextButton = document.getElementById("next");
+// const slides = document.querySelectorAll(".slide");
+// let currentSlide = 0;
 
-showNextSlide(currentSlide);
+// showNextSlide(currentSlide);
 
 //Event listeners 
 startButton.addEventListener('click', startGame);
