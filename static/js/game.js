@@ -124,7 +124,7 @@
   };
 
   //Variables
-
+  const startButton = document.getElementById('start');
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
@@ -253,7 +253,7 @@
 
 
   //display quiz right away
-  buildQuiz();
+ buildQuiz();
 
   //Pagination
   const nextButton = document.getElementById("next");
@@ -262,7 +262,7 @@
 
   //show the first slide
   showSlide(currentSlide);
-
+  //startButton.addEventListener('click', buildQuiz);
   checkAnswerButton.addEventListener('click', checkAnswer);
   nextButton.addEventListener('click', showNextSlide);
   submitButton.addEventListener('click', showResults);
