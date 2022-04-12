@@ -4,6 +4,7 @@ const options = Array.from(document.querySelectorAll('.option-text'));
 const startButton = document.getElementById('start');
 
 let currentQuestion = {};
+let availableQuestions = [];
 
 const questions = [{
     question: "What major key is this?",
@@ -92,7 +93,7 @@ const questions = [{
   {
     question: "What minor key is this?",
     image: `<img src="../static/images/b-flat-major.png"/>`,
-    "options": {
+    options: {
       a: "Ab minor",
       b: "B minor",
       c: "G minor",
@@ -128,14 +129,33 @@ const questions = [{
 ];
 
 startGame = () => {
-  
+
   newQuestion();
 };
 
 function newQuestion() {
-    
-    question.innerHTML = questions[0].question;
-    
-};
+  // let n = 0;
+  
+  //   question.innerHTML = questions[n].question;
 
-startGame();
+  //   for (let i = 0; i < questions.length; i++) {
+  //     let option = options[n];
+  //     option.innerHTML = questions.options;
+  //     n++;
+  //   }
+
+  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    let n = 0;
+    question.innerHTML = questions[n].question;
+
+    options.forEach(option => {
+        option.innerHTML = currentQuestion;
+    });
+
+    availableQuestions.splice(questionsIndex, 1);
+    n++;
+
+  };
+
+  startGame();
