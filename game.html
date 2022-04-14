@@ -50,19 +50,19 @@
             Best of luck!</p>
     </section>
     <section class="container-fluid">
-        <div id="game" class="quiz-container container-fluid">
-            <div id="image-container"></div>
+        <div id="game" class="quiz-container row justify-content-center">
+            <div id="image-container" class="col-12"></div>
             <h1 id="question"></h1>
-            <div class="option-container">
+            <div class="option-container col-12 m-3">
                 <p class="option-text" data-number="1"></p>
             </div>
-            <div class="option-container">
+            <div class="option-container col-12 m-3">
                 <p class="option-text" data-number="2"></p>
             </div>
-            <div class="option-container">
+            <div class="option-container col-12 m-3">
                 <p class="option-text" data-number="3"></p>
             </div>
-            <div class="option-container">
+            <div class="option-container col-12 m-3">
                 <p class="option-text" data-number="4"></p>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <button type="button" class="btn btn-primary mt-5" id="start">Start Game</button>
             <button type="button" class="btn btn-primary mt-5" id="next">Next Question</button>
             <button type="button" class="btn btn-primary mt-5" id="submit">Submit</button>
-            <button type="button" class="btn btn-primary mt-5" id="check">Check Answer</button>
+            <button type="button" class="btn btn-secondary mt-5" id="check" disabled>Check Answer</button>
             <div id="results"></div>
         </section>
     <section id="back-buttons">

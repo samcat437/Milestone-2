@@ -1,20 +1,21 @@
 //Variables
-const image= document.getElementById('image-container');
+const welcome = document.getElementById('welcome');
+const image = document.getElementById('image-container');
 const question = document.querySelector('#question');
-const options = Array.from(document.querySelectorAll('.option-text'));
+const options = Array.from(document.querySelectorAll('.option-container'));
+
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
 const submitButton = document.getElementById('submit');
-const welcome = document.getElementById('welcome');
+const checkButton = document.getElementById('check');
 
-let currentQuestion = {};
-let availableQuestions = [];
+
 let n = 0;
 
 const questions = [{
     question: "What major key is this?",
     image: `<img src="../static/images/e-major.png"/>`,
-    options: ["A major","C major","E major", "F# major"],
+    options: ["A major", "C major", "E major", "F# major"],
     answer: "E major"
   },
 
@@ -49,7 +50,7 @@ const questions = [{
   {
     question: "What major key is this?",
     image: `<img src="../static/images/a-major.png"/>`,
-    options:  ["D major", "A major", "B major", "F# major"],
+    options: ["D major", "A major", "B major", "F# major"],
     answer: "A major"
   },
 
@@ -91,32 +92,47 @@ startGame = () => {
 };
 
 function newQuestion() {
+  checkButton.classList.add('.inactive');
+  image.innerHTML = questions[n].image;
 
-  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
-    
-    image.innerHTML = questions[n].image;
-    
-    question.innerHTML = questions[n].question;
+  question.innerHTML = questions[n].question;
 
-    for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
 
-      options[i].innerHTML = questions[n].options[i];
-      };
+    options[i].innerHTML = questions[n].options[i];
+  };
 
-    availableQuestions.splice(questionsIndex, 1);
-    n++;
+  n++;
+  //not working
+  if (questions[n].length - 1) {
+    submitButton.style.display = 'inline-block';
+  };
+};
 
-    //not working
-    if (currentQuestion = questionsIndex.length-1) {
-      submitButton.style.display = 'inline-block';
+function checkAnswer() {
+  for (i=0; i>4; i++) {
+    if (options[i].classList.contains('selected') === 1 ){
+      checkButton.classList.add('active');
+    } else {
+      `<div>Please select one option only.</div>`
     };
-
   };
-
-  function checkAnswer() {
-    
+  const userAnswer = e.target;
+  const answer = questions[n].answer;
+  if (userAnswer === answer) {
+    option.classList.add('correct');
+  } else {
+    option.classList.add('incorrect');
   };
+};
 
-  startButton.addEventListener('click', startGame);
-  nextButton.addEventListener('click', newQuestion);
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', newQuestion);
+options.forEach(option => {
+  option.addEventListener('click', () => {
+      option.classList.toggle('selected');
+      if (option.classList.contains('selected')) {
+        console.log('hi');
+      };
+    });
+});

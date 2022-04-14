@@ -24,8 +24,16 @@
   background-color: red;
 }
 
-button:hover {
-  background-color: #38a;
-} 
+.selected {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  background-color: green;
+}
+
+
+
 
 
