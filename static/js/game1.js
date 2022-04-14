@@ -3,6 +3,7 @@ const welcome = document.getElementById('welcome');
 const image = document.getElementById('image-container');
 const question = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-container'));
+const optionContainer = document.getElementById('option-container');
 
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
@@ -88,18 +89,21 @@ startGame = () => {
   welcome.style.display = 'none';
   startButton.style.display = 'none';
   submitButton.style.display = 'none';
+
   newQuestion();
 };
 
 function newQuestion() {
   checkButton.classList.add('.inactive');
+  optionContainer.classList.remove('hidden');
   image.innerHTML = questions[n].image;
 
   question.innerHTML = questions[n].question;
 
   for (let i = 0; i < 4; i++) {
 
-    options[i].innerHTML = questions[n].options[i];
+    options[i].innerText = questions[n].options[i];
+
   };
 
   n++;
@@ -107,32 +111,55 @@ function newQuestion() {
   if (questions[n].length - 1) {
     submitButton.style.display = 'inline-block';
   };
+
+
+  // options.forEach(option => {
+  //     option.addEventListener('click', e => {
+  //       option.classList.toggle('selected');
+  //       checkAnswer();
+  //     });
+  //   });
+  // };
+  options.forEach(option => {
+    function select() {
+        option.classList.toggle('selected');
+        checkAnswer();
+      };
+    });     
 };
 
+// function select(option) {
+//   console.log('hi');
+//   option.classList.toggle('selected');
+//   checkAnswer();
+//   };
+
+
+  
+  
+
+
+
 function checkAnswer() {
-  for (i=0; i>4; i++) {
-    if (options[i].classList.contains('selected') === 1 ){
-      checkButton.classList.add('active');
-    } else {
-      `<div>Please select one option only.</div>`
-    };
+  checkButton.removeAttribute('disabled');
+  checkButton.classList.remove('btn-secondary');
+  checkButton.classList.add('active');
+  //not working - need to rewrite 116
+  if (checkButton.classList.contains('active')) {
+    for (let i = 0 ; i < options.length; i++) {
+      options[i].removeEventListener('click', select); 
   };
-  const userAnswer = e.target;
-  const answer = questions[n].answer;
-  if (userAnswer === answer) {
-    option.classList.add('correct');
-  } else {
-    option.classList.add('incorrect');
   };
+  // const userAnswer = e.target;
+  // const answer = questions[n].answer;
+  // if (userAnswer === answer) {
+  //   option.classList.add('correct');
+  // } else {
+  //   option.classList.add('incorrect');
 };
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', newQuestion);
-options.forEach(option => {
-  option.addEventListener('click', () => {
-      option.classList.toggle('selected');
-      if (option.classList.contains('selected')) {
-        console.log('hi');
-      };
-    });
-});
+for (let i = 0 ; i < options.length; i++) {
+  options[i].addEventListener('click', select); 
+};
