@@ -7,6 +7,15 @@
   background-color: #f8f6f0;
 } 
 
+.option-container {
+  background-color: aqua;
+  width: 50%;
+}
+
+.option-text {
+  color: white;
+}
+
 .correct {
   background-color: green;
 }

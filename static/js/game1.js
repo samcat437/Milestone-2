@@ -4,6 +4,7 @@ const question = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-text'));
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
+const submitButton = document.getElementById('submit');
 const welcome = document.getElementById('welcome');
 
 let currentQuestion = {};
@@ -85,6 +86,7 @@ const questions = [{
 startGame = () => {
   welcome.style.display = 'none';
   startButton.style.display = 'none';
+  submitButton.style.display = 'none';
   newQuestion();
 };
 
@@ -105,6 +107,15 @@ function newQuestion() {
     availableQuestions.splice(questionsIndex, 1);
     n++;
 
+    //not working
+    if (currentQuestion = questionsIndex.length-1) {
+      submitButton.style.display = 'inline-block';
+    };
+
+  };
+
+  function checkAnswer() {
+    
   };
 
   startButton.addEventListener('click', startGame);
