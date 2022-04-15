@@ -14,6 +14,7 @@ const checkButton = document.getElementById('check');
 
 let n = 0;
 
+
 const questions = [{
     question: "What major key is this?",
     image: `<img src="../static/images/e-major.png"/>`,
@@ -92,6 +93,11 @@ startGame = () => {
   startButton.style.display = 'none';
   submitButton.style.display = 'none';
 
+  readyQuestion();
+};
+
+function readyQuestion() {
+  // reset();
   newQuestion();
 };
 
@@ -112,40 +118,58 @@ function newQuestion() {
   //not working
   if (questions[n].length - 1) {
     submitButton.style.display = 'inline-block';
+    nextButton.classList.add = 'hidden';
   };
 
 };
 
+// function reset() {
+//   clear(document.body);
+// };
+
 //still not able to have one get clicked and then stop the ability to click. 
-function select(e) {
+function selectAnswer(e) {
   const selection = e.target;
+  const answer = selection.dataset.correct;
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('click', e => {
-        options[i].classList.add('selected')
-        if (options[i].classList.contains('selected')) {
-          options[i].removeEventListener('click', select);
-        };
-      checkAnswer();
+      options[i].classList.add('selected')
+      if (options[i].classList.contains('selected')) {
+        options[i].removeEventListener('click', selectAnswer);
+      };
+      exposeCheck(selection);
+      //don't want to do this until clicked button, selecting entire container, but just want the indiv element
+      checkAnswer(selection, answer);
+      Array.from(optionContainer.children).forEach(option => {
+        checkAnswer(option, option.dataset.answer)
+      });
     });
   };
 };
 
-
-
-function checkAnswer() {
+function exposeCheck() {
   checkButton.removeAttribute('disabled');
   checkButton.classList.remove('btn-secondary');
   checkButton.classList.add('checkactive');
-
-  if (checkButton.classList.contains('checkactive')) {
-    for (let i = 0; i < options.length; i++) {
-      options[i].removeEventListener('click', select(i));
-    };
-  };
-
 };
+
+function checkAnswer(selection, correct) {
+  clear(selection);
+  if (correct) {
+    selection.classList.add('correct');
+  } else {
+    selection.classList.add('incorrect');
+  };
+};
+
+function clear(selection) {
+  selection.classList.remove('correct');
+  selection.classList.remove('incorrect');
+};
+
 
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', newQuestion);
-optionContainer.addEventListener('click', select);
+optionContainer.addEventListener('mouseover', selectAnswer);
+checkButton.addEventListener('click', checkAnswer);
