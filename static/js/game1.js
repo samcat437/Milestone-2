@@ -5,6 +5,7 @@ const question = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-container'));
 const optionContainer = document.getElementById('option-container');
 
+const buttonsContainer = document.getElementById('nav-buttons')
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
 const submitButton = document.getElementById('submit');
@@ -87,6 +88,7 @@ const questions = [{
 
 startGame = () => {
   welcome.style.display = 'none';
+  buttonsContainer.classList.remove('hidden');
   startButton.style.display = 'none';
   submitButton.style.display = 'none';
 
@@ -112,54 +114,38 @@ function newQuestion() {
     submitButton.style.display = 'inline-block';
   };
 
-
-  // options.forEach(option => {
-  //     option.addEventListener('click', e => {
-  //       option.classList.toggle('selected');
-  //       checkAnswer();
-  //     });
-  //   });
-  // };
-  options.forEach(option => {
-    function select() {
-        option.classList.toggle('selected');
-        checkAnswer();
-      };
-    });     
 };
 
-// function select(option) {
-//   console.log('hi');
-//   option.classList.toggle('selected');
-//   checkAnswer();
-//   };
-
-
-  
-  
+//still not able to have one get clicked and then stop the ability to click. 
+function select(e) {
+  const selection = e.target;
+  for (let i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', e => {
+        options[i].classList.add('selected')
+        if (options[i].classList.contains('selected')) {
+          options[i].removeEventListener('click', select);
+        };
+      checkAnswer();
+    });
+  };
+};
 
 
 
 function checkAnswer() {
   checkButton.removeAttribute('disabled');
   checkButton.classList.remove('btn-secondary');
-  checkButton.classList.add('active');
-  //not working - need to rewrite 116
-  if (checkButton.classList.contains('active')) {
-    for (let i = 0 ; i < options.length; i++) {
-      options[i].removeEventListener('click', select); 
+  checkButton.classList.add('checkactive');
+
+  if (checkButton.classList.contains('checkactive')) {
+    for (let i = 0; i < options.length; i++) {
+      options[i].removeEventListener('click', select(i));
+    };
   };
-  };
-  // const userAnswer = e.target;
-  // const answer = questions[n].answer;
-  // if (userAnswer === answer) {
-  //   option.classList.add('correct');
-  // } else {
-  //   option.classList.add('incorrect');
+
 };
+
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', newQuestion);
-for (let i = 0 ; i < options.length; i++) {
-  options[i].addEventListener('click', select); 
-};
+optionContainer.addEventListener('click', select);
