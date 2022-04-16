@@ -4,8 +4,12 @@ const image = document.getElementById('image-container');
 const question = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-container'));
 const optionContainer = document.getElementById('option-container');
+const gameContainer = document.getElementById('game');
+const score = document.getElementById('score');
+const message = document.getElementById('message');
 
-const buttonsContainer = document.getElementById('nav-buttons')
+
+const buttonsContainer = document.getElementById('nav-buttons');
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
 const submitButton = document.getElementById('submit');
@@ -13,7 +17,7 @@ const checkButton = document.getElementById('check');
 
 
 let n = 0;
-
+let numCorrect = 0;
 
 const questions = [{
     question: "What major key is this?",
@@ -32,8 +36,8 @@ const questions = [{
   {
     question: "What minor key is this?",
     image: `<img src="../static/images/c-flat-major.png"/>`,
-    options: ["Bb minor", "C minor", "Db minor", "Ab minor"],
-    answer: "Ab minor"
+    options: ["Bb minor", "C minor", "Db minor", "Eb minor"],
+    answer: "Eb minor"
   },
 
   {
@@ -73,7 +77,7 @@ const questions = [{
 
   {
     question: "What major key is this?",
-    image: `<img src="../static/images/e-major.png"/>`,
+    image: `<img src="../static/images/b-major.png"/>`,
     options: ["C# major", "D major", "B major", "A major"],
     answer: "B major"
   },
@@ -98,19 +102,20 @@ startGame = () => {
 
 function readyQuestion() {
   console.log('getting ready');
-  if (document.querySelector('.correct') || document.querySelector('.incorrect') || document.querySelector('.selected')) {
+
+  if (document.querySelector('.correct')) {
     document.querySelector('.correct').classList.remove('correct');
+  } else if (document.querySelector('.incorrect')) {
     document.querySelector('.incorrect').classList.remove('incorrect');
+  } else if (document.querySelector('.selected')) {
     document.querySelector('.selected').classList.remove('selected');
-  }; 
-  // if (document.querySelector('.incorrect')) {
-  //   document.querySelector('.incorrect').classList.remove('incorrect');
-  // };
+  };
+
   newQuestion();
 };
 
 function newQuestion() {
-  checkButton.classList.add('.inactive');
+  nextButton.setAttribute('disabled', "");
   optionContainer.classList.remove('hidden');
   image.innerHTML = questions[n].image;
 
@@ -121,24 +126,24 @@ function newQuestion() {
   };
 
   n++;
-  //not working
-  if (questions[n].length - 1) {
+  if (n === questions.length) {
     submitButton.style.display = 'inline-block';
-    nextButton.classList.add = 'hidden';
+    nextButton.classList.add('hidden');
   };
   selectAnswer();
 };
- 
+
 function selectAnswer() {
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('click', e => {
-      options[i].classList.add('selected');
-      //still not able to have one get clicked and then stop the ability to click.
-      if (options[i].classList.contains('selected')) {
-        options[i].removeEventListener('click', selectAnswer);
+        options[i].classList.add('selected');
+        exposeCheck();
+      });
+      //still not able to have one get clicked and then stop the ability to click
+      if (document.querySelector('selected')) {
+        options[i].removeEventListener('click', e);
+        
       };
-      exposeCheck(); 
-    });
   };
 };
 
@@ -149,21 +154,40 @@ function exposeCheck() {
 };
 
 function checkAnswer() {
-  let i = n-1;
+
+  let i = n - 1;
   const selection = document.querySelector('.selected');
-  const selectionValue = document.querySelector('.selected').innerHTML
+  const selectionValue = document.querySelector('.selected').innerHTML;
   const answer = questions[i].answer;
+
   console.log(selectionValue);
   console.log(answer);
+
   selection.classList.remove('selected');
 
-  if (selectionValue === answer) {    
+  if (selectionValue === answer) {
+    numCorrect++;
     selection.classList.add('correct');
+    message.innerHTML = `Congratulations! You're correct.`
   } else {
     selection.classList.add('incorrect');
+    message.innerHTML = `Oops! The correct answer is ${answer}.`;
   };
+
+  score.innerHTML = `<div>Score: <br>${numCorrect} / ${questions.length}</div>`;
+  nextButton.removeAttribute('disabled');
   nextButton.addEventListener('click', readyQuestion);
+};
+
+function submit () {
+  message.classList.add('hidden');
+  if (numCorrect > 7) {
+  gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${questions.length}. Well done! Tap start to try the game again.</div>`
+  } else { 
+    gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${questions.length}. Tap the lesson button to review how to identify the key signatures and then try again!</div>`
+  }
 };
 
 startButton.addEventListener('click', startGame);
 checkButton.addEventListener('click', checkAnswer);
+submitButton.addEventListener('click', submit);

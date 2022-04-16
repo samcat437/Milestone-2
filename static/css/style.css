@@ -4,11 +4,32 @@
   color: #333;
   font-weight: 300;
   text-align: center;
-  background-color: #f8f6f0;
+  background-color: #c0fdfb;
 } 
 
+#score{
+  width: 100px;
+  background-color: #5D737E;
+  color: white;
+  margin: auto;
+}
+
+.btn-primary {
+  background-color: #5D737E;
+  border-color: #5D737E;
+}
+
+.btn-primary:hover {
+  background-color: #3D4B52;
+  border-color: #3D4B52;
+}
+/* //not working  */
+.btn-secondary:hover {
+  color: white;
+}
+
 .option-container {
-  background-color: aqua;
+  background-color: #64b6ac;
   width: 50%;
 }
 
@@ -25,8 +46,8 @@
 }
 
 .selected {
-  background-color: black;
-  color: white;
+  background-color: #FCFFFD;
+  color: #64b6ac;
 }
 
 .checkactive {
