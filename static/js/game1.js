@@ -1,90 +1,90 @@
 //Variables
-const welcome = document.getElementById('welcome');
-const image = document.getElementById('image-container');
-const question = document.querySelector('#question');
-const options = Array.from(document.querySelectorAll('.option-container'));
-const optionContainer = document.getElementById('option-container');
-const gameContainer = document.getElementById('game');
-const score = document.getElementById('score');
-const message = document.getElementById('message');
+let welcome = document.getElementById('welcome');
+let image = document.getElementById('image-container');
+let question = document.querySelector('#question');
+let options = Array.from(document.querySelectorAll('.option-container'));
+let optionContainer = document.getElementById('option-container');
+let gameContainer = document.getElementById('game');
+let score = document.getElementById('score');
+let message = document.getElementById('message');
 
 
-const buttonsContainer = document.getElementById('nav-buttons');
-const startButton = document.getElementById('start');
-const nextButton = document.getElementById('next');
-const submitButton = document.getElementById('submit');
-const checkButton = document.getElementById('check');
+let buttonsContainer = document.getElementById('nav-buttons');
+let startButton = document.getElementById('start');
+let nextButton = document.getElementById('next');
+let submitButton = document.getElementById('submit');
+let checkButton = document.getElementById('check');
 
 
 let n = 0;
 let numCorrect = 0;
 
-const questions = [{
+const QUESTIONS = [{
     question: "What major key is this?",
-    image: `<img src="../static/images/e-major.png"/>`,
+    image: `<img src="static/images/e-major.png"/>`,
     options: ["A major", "C major", "E major", "F# major"],
     answer: "E major"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="../static/images/f-major.png"/>`,
+    image: `<img src="static/images/f-major.png"/>`,
     options: ["F major", "G major", "Eb major", "D major"],
     answer: "F major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="../static/images/c-flat-major.png"/>`,
+    image: `<img src="static/images/c-flat-major.png"/>`,
     options: ["Bb minor", "C minor", "Db minor", "Eb minor"],
     answer: "Eb minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="../static/images/c-sharp-major.png"/>`,
+    image: `<img src="static/images/c-sharp-major.png"/>`,
     options: ["C major", "E major", "F major", "C# major"],
     answer: "C# major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="../static/images/g-flat-major.png"/>`,
+    image: `<img src="static/images/g-flat-major.png"/>`,
     options: ["F minor", "D minor", "C minor", "Gb minor"],
     answer: "Gb minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="../static/images/a-major.png"/>`,
+    image: `<img src="static/images/a-major.png"/>`,
     options: ["D major", "A major", "B major", "F# major"],
     answer: "A major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="../static/images/a-flat-major.png"/>`,
+    image: `<img src="static/images/a-flat-major.png"/>`,
     options: ["B minor", "G minor", "E minor", "F minor"],
     answer: "F minor"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="../static/images/b-flat-major.png"/>`,
+    image: `<img src="static/images/b-flat-major.png"/>`,
     options: ["Ab minor", "B minor", "G minor", "C# minor"],
     answer: "G minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="../static/images/b-major.png"/>`,
+    image: `<img src="static/images/b-major.png"/>`,
     options: ["C# major", "D major", "B major", "A major"],
     answer: "B major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="../static/images/e-flat-major.png"/>`,
+    image: `<img src="static/images/e-flat-major.png"/>`,
     options: ["Bb minor", "C minor", "A minor", "F minor"],
     answer: "C minor"
   }
@@ -142,7 +142,6 @@ function selectAnswer() {
       //still not able to have one get clicked and then stop the ability to click
       if (document.querySelector('selected')) {
         options[i].removeEventListener('click', e);
-        
       };
   };
 };
@@ -181,6 +180,7 @@ function checkAnswer() {
 
 function submit () {
   message.classList.add('hidden');
+
   if (numCorrect > 7) {
   gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${questions.length}. Well done! Tap start to try the game again.</div>`
   } else { 
