@@ -93,11 +93,13 @@ startGame = () => {
   startButton.style.display = 'none';
   submitButton.style.display = 'none';
 
-  readyQuestion();
+  newQuestion();
 };
 
-function readyQuestion() {
-  // reset();
+function readyQuestion(selection) {
+  console.log(selection);
+  selection.classList.remove('correct');
+  selection.classList.remove('incorrect');
   newQuestion();
 };
 
@@ -109,9 +111,7 @@ function newQuestion() {
   question.innerHTML = questions[n].question;
 
   for (let i = 0; i < 4; i++) {
-
     options[i].innerText = questions[n].options[i];
-
   };
 
   n++;
@@ -122,28 +122,16 @@ function newQuestion() {
   };
   selectAnswer();
 };
-
-// function reset() {
-//   clear(document.body);
-// };
-
-//still not able to have one get clicked and then stop the ability to click. 
-function selectAnswer(e) {
-  console.log('hi');
+ 
+function selectAnswer() {
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('click', e => {
-      options[i].classList.add('selected')
-      const selection = e.target;
-      const answer = selection.dataset.correct;
+      options[i].classList.add('selected');
+      //still not able to have one get clicked and then stop the ability to click.
       if (options[i].classList.contains('selected')) {
         options[i].removeEventListener('click', selectAnswer);
       };
-      exposeCheck(selection);
-      //don't want to do this until clicked button, selecting entire container, but just want the indiv element
-      // checkAnswer(selection, answer);
-      // Array.from(optionContainer.children).forEach(option => {
-      //   checkAnswer(option, option.dataset.answer)
-      // });
+      exposeCheck(); 
     });
   };
 };
@@ -154,21 +142,22 @@ function exposeCheck() {
   checkButton.classList.add('checkactive');
 };
 
-function checkAnswer(selection, correct) {
-  clear(selection);
-  if (correct) {
+function checkAnswer() {
+  let n = 0;
+  const selection = document.querySelector('.selected');
+  const selectionValue = document.querySelector('.selected').innerHTML
+  const answer = questions[n].answer;
+  console.log(selectionValue);
+  console.log(answer);
+  selection.classList.remove('selected');
+
+  if (selectionValue === answer) {    
     selection.classList.add('correct');
   } else {
     selection.classList.add('incorrect');
   };
+  nextButton.addEventListener('click', readyQuestion);
 };
-
-function clear(selection) {
-  selection.classList.remove('correct');
-  selection.classList.remove('incorrect');
-};
-
-
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', newQuestion);
