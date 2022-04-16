@@ -120,7 +120,7 @@ function newQuestion() {
     submitButton.style.display = 'inline-block';
     nextButton.classList.add = 'hidden';
   };
-
+  selectAnswer();
 };
 
 // function reset() {
@@ -129,20 +129,21 @@ function newQuestion() {
 
 //still not able to have one get clicked and then stop the ability to click. 
 function selectAnswer(e) {
-  const selection = e.target;
-  const answer = selection.dataset.correct;
+  console.log('hi');
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('click', e => {
       options[i].classList.add('selected')
+      const selection = e.target;
+      const answer = selection.dataset.correct;
       if (options[i].classList.contains('selected')) {
         options[i].removeEventListener('click', selectAnswer);
       };
       exposeCheck(selection);
       //don't want to do this until clicked button, selecting entire container, but just want the indiv element
-      checkAnswer(selection, answer);
-      Array.from(optionContainer.children).forEach(option => {
-        checkAnswer(option, option.dataset.answer)
-      });
+      // checkAnswer(selection, answer);
+      // Array.from(optionContainer.children).forEach(option => {
+      //   checkAnswer(option, option.dataset.answer)
+      // });
     });
   };
 };
@@ -171,5 +172,4 @@ function clear(selection) {
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', newQuestion);
-optionContainer.addEventListener('mouseover', selectAnswer);
 checkButton.addEventListener('click', checkAnswer);
