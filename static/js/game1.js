@@ -46,8 +46,8 @@ const questions = [{
   {
     question: "What minor key is this?",
     image: `<img src="../static/images/g-flat-major.png"/>`,
-    options: ["F minor", "D minor", "C minor", "Eb minor"],
-    answer: "Eb minor"
+    options: ["F minor", "D minor", "C minor", "Gb minor"],
+    answer: "Gb minor"
   },
 
   {
@@ -96,10 +96,16 @@ startGame = () => {
   newQuestion();
 };
 
-function readyQuestion(selection) {
-  console.log(selection);
-  selection.classList.remove('correct');
-  selection.classList.remove('incorrect');
+function readyQuestion() {
+  console.log('getting ready');
+  if (document.querySelector('.correct') || document.querySelector('.incorrect') || document.querySelector('.selected')) {
+    document.querySelector('.correct').classList.remove('correct');
+    document.querySelector('.incorrect').classList.remove('incorrect');
+    document.querySelector('.selected').classList.remove('selected');
+  }; 
+  // if (document.querySelector('.incorrect')) {
+  //   document.querySelector('.incorrect').classList.remove('incorrect');
+  // };
   newQuestion();
 };
 
@@ -143,10 +149,10 @@ function exposeCheck() {
 };
 
 function checkAnswer() {
-  let n = 0;
+  let i = n-1;
   const selection = document.querySelector('.selected');
   const selectionValue = document.querySelector('.selected').innerHTML
-  const answer = questions[n].answer;
+  const answer = questions[i].answer;
   console.log(selectionValue);
   console.log(answer);
   selection.classList.remove('selected');
@@ -160,5 +166,4 @@ function checkAnswer() {
 };
 
 startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', newQuestion);
 checkButton.addEventListener('click', checkAnswer);
