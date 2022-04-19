@@ -1,22 +1,31 @@
  body {
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   color: #333;
   font-weight: 300;
   text-align: center;
-  background-color: #c0fdfb;
+  background-color: #FAF9F6;
 } 
+
+header {
+  background-color: #FAF9F6; 
+  color: #56CBF9;
+
+}
+
+nav .active {
+  color: #56CBF9
+}
 
 #score{
   width: 100px;
-  background-color: #5D737E;
-  color: white;
+  background-color: #FF729F;
+  color: #FAF9F6;
   margin: auto;
 }
 
 .btn-primary {
-  background-color: #5D737E;
-  border-color: #5D737E;
+  background-color: #09ACEC;
+  border-color: #09ACEC;
 }
 
 .btn-primary:hover {
@@ -29,16 +38,17 @@
 }
 
 .option-container {
-  background-color: #64b6ac;
+  background-color: #56CBF9;
   width: 50%;
+  height: 3.5rem;
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.option-text {
-  color: white;
-}
 
 .correct {
-  background-color: green;
+  background-color: #81F4E1;
 }
 
 .incorrect {
@@ -46,8 +56,8 @@
 }
 
 .selected {
-  background-color: #FCFFFD;
-  color: #64b6ac;
+  background-color: #FF729F;
+  color: #56CBF9;
 }
 
 .disabled {
@@ -55,7 +65,7 @@
 }
 
 .checkactive {
-  background-color: green;
+  background-color: #81F4E1;
   color: white;
   
 }
@@ -63,6 +73,8 @@
 .hidden {
   display: none;
 }
+/* not working */
+
 
 
 
