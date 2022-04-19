@@ -140,11 +140,13 @@ function selectAnswer() {
    options.forEach(option => {
     option.addEventListener('click', i => {
         option.classList.add('selected');
-        
         exposeCheck();
+        options.forEach(option => {
+          if (!option.classList.contains("selected")) {
+            option.classList.add("disabled");
+          };
+        });
       });
-      // while (options.classList.contains("selected") = false);
-      //still not able to have one get clicked and then stop the ability to click
   });
 };
 

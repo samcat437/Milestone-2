@@ -50,6 +50,10 @@
   color: #64b6ac;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .checkactive {
   background-color: green;
   color: white;
