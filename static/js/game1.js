@@ -1,20 +1,7 @@
 //Variables
-let welcome = document.getElementById('welcome');
-let image = document.getElementById('image-container');
-let question = document.querySelector('#question');
-let options = Array.from(document.querySelectorAll('.option-container'));
-let optionContainer = document.getElementById('option-container');
-let gameContainer = document.getElementById('game');
-let score = document.getElementById('score');
-let message = document.getElementById('message');
-
-
-let buttonsContainer = document.getElementById('nav-buttons');
 let startButton = document.getElementById('start');
-let nextButton = document.getElementById('next');
 let submitButton = document.getElementById('submit');
 let checkButton = document.getElementById('check');
-
 
 let n = 0;
 let numCorrect = 0;
@@ -92,6 +79,11 @@ const QUESTIONS = [{
 ];
 
 startGame = () => {
+  let welcome = document.getElementById('welcome');
+  let buttonsContainer = document.getElementById('nav-buttons');
+  let startButton = document.getElementById('start');
+  let submitButton = document.getElementById('submit');
+
   welcome.style.display = 'none';
   buttonsContainer.classList.remove('hidden');
   startButton.style.display = 'none';
@@ -102,6 +94,9 @@ startGame = () => {
 
 function readyQuestion() {
   console.log('getting ready');
+  let message = document.getElementById('message');
+
+  message.classList.add('hidden');
 
   if (document.querySelector('.correct')) {
     document.querySelector('.correct').classList.remove('correct');
@@ -115,18 +110,24 @@ function readyQuestion() {
 };
 
 function newQuestion() {
+  let image = document.getElementById('image-container');
+  let question = document.querySelector('#question');
+  let options = Array.from(document.querySelectorAll('.option-container'));
+  let optionContainer = document.getElementById('option-container');
+  let nextButton = document.getElementById('next');
+  
   nextButton.setAttribute('disabled', "");
   optionContainer.classList.remove('hidden');
-  image.innerHTML = questions[n].image;
+  image.innerHTML = QUESTIONS[n].image;
 
-  question.innerHTML = questions[n].question;
+  question.innerHTML = QUESTIONS[n].question;
 
   for (let i = 0; i < 4; i++) {
-    options[i].innerText = questions[n].options[i];
+    options[i].innerText = QUESTIONS[n].options[i];
   };
 
   n++;
-  if (n === questions.length) {
+  if (n === QUESTIONS.length) {
     submitButton.style.display = 'inline-block';
     nextButton.classList.add('hidden');
   };
@@ -134,30 +135,36 @@ function newQuestion() {
 };
 
 function selectAnswer() {
-  for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener('click', e => {
-        options[i].classList.add('selected');
+  let options = Array.from(document.querySelectorAll('.option-container'));
+
+   options.forEach(option => {
+    option.addEventListener('click', i => {
+        option.classList.add('selected');
+        
         exposeCheck();
       });
+      // while (options.classList.contains("selected") = false);
       //still not able to have one get clicked and then stop the ability to click
-      if (document.querySelector('selected')) {
-        options[i].removeEventListener('click', e);
-      };
-  };
+  });
 };
 
 function exposeCheck() {
+  let checkButton = document.getElementById('check');
+
   checkButton.removeAttribute('disabled');
   checkButton.classList.remove('btn-secondary');
-  checkButton.classList.add('checkactive');
+  checkButton.classList.add('checkactive');  
 };
 
 function checkAnswer() {
 
   let i = n - 1;
-  const selection = document.querySelector('.selected');
-  const selectionValue = document.querySelector('.selected').innerHTML;
-  const answer = questions[i].answer;
+  let selection = document.querySelector('.selected');
+  let selectionValue = document.querySelector('.selected').innerHTML;
+  let answer = QUESTIONS[i].answer;
+  let score = document.getElementById('score');
+  let message = document.getElementById('message');
+  let nextButton = document.getElementById('next');
 
   console.log(selectionValue);
   console.log(answer);
@@ -173,21 +180,28 @@ function checkAnswer() {
     message.innerHTML = `Oops! The correct answer is ${answer}.`;
   };
 
-  score.innerHTML = `<div>Score: <br>${numCorrect} / ${questions.length}</div>`;
+  score.innerHTML = `<div>Score: <br>${numCorrect} / ${QUESTIONS.length}</div>`;
   nextButton.removeAttribute('disabled');
   nextButton.addEventListener('click', readyQuestion);
 };
 
-function submit () {
+function submit() {
+  let gameContainer = document.getElementById('game');
+  let message = document.getElementById('message');
+
   message.classList.add('hidden');
 
   if (numCorrect > 7) {
-  gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${questions.length}. Well done! Tap start to try the game again.</div>`
+  gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${QUESTIONS.length}. Well done! Tap start to try the game again.</div>`
   } else { 
-    gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${questions.length}. Tap the lesson button to review how to identify the key signatures and then try again!</div>`
-  }
+    gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${QUESTIONS.length}. Tap the lesson button to review how to identify the key signatures and then try again!</div>`
+  };
 };
 
-startButton.addEventListener('click', startGame);
-checkButton.addEventListener('click', checkAnswer);
-submitButton.addEventListener('click', submit);
+window.addEventListener('DOMContentLoaded', (event) => {
+  startButton.addEventListener('click', startGame);
+  checkButton.addEventListener('click', checkAnswer);
+  submitButton.addEventListener('click', submit);
+});
+
+
