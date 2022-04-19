@@ -102,10 +102,17 @@ startGame = () => {
  * It will call the newQuestion function to generate the next question.
  */
 function readyQuestion() {
-
   let message = document.getElementById("message");
+  let checkButton = document.getElementById("check");
+  let options = Array.from(document.querySelectorAll(".option-container"));
 
+  options.forEach(option => {
+    option.classList.remove("disabled");
+  });
+  
   message.classList.add("hidden");
+  checkButton.setAttribute("disabled", true);
+
 
   if (document.querySelector(".correct")) {
     document.querySelector(".correct").classList.remove("correct");
@@ -147,8 +154,10 @@ function newQuestion() {
     submitButton.style.display = "inline-block";
     nextButton.classList.add("hidden");
   };
+
   selectAnswer();
 };
+
 /**
  * selectAnswer function will loop through the options array and assign a click event to each option. If an option is clicked, it will make the other options unclickable. 
  * Once an option has been clicked, it will call the exposeCheck function.
@@ -197,8 +206,6 @@ function checkAnswer() {
   let message = document.getElementById("message");
   let nextButton = document.getElementById("next");
 
-  selection.classList.remove("selected");
-
   if (selectionValue === answer) {
     numCorrect++;
     selection.classList.add("correct");
@@ -209,6 +216,7 @@ function checkAnswer() {
   };
 
   score.innerHTML = `<div>Score: <br>${numCorrect} / ${QUESTIONS.length}</div>`;
+  selection.classList.remove("selected");
   nextButton.removeAttribute("disabled");
   nextButton.addEventListener("click", readyQuestion);
 };
@@ -218,10 +226,12 @@ function checkAnswer() {
  * If lower than 7, it redirects the user to the lesson page.
  */
 function submit() {
+  let backButtons = document.getElementById("back-buttons");
   let gameContainer = document.getElementById("game");
   let message = document.getElementById("message");
 
   message.classList.add("hidden");
+  backButtons.classList.remove("hidden");
 
   if (numCorrect > 7) {
     gameContainer.innerHTML = `<div>You scored ${numCorrect} / ${QUESTIONS.length}. Well done! Tap start to try the game again.</div>`

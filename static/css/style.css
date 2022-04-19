@@ -6,49 +6,99 @@
   background-color: #FAF9F6;
 } 
 
+#welcome {
+  margin-top: 15%;
+}
+
+#welcome p {
+  font-size: 1.25rem;
+}
+
 header {
   background-color: #FAF9F6; 
   color: #56CBF9;
 
 }
 
-nav .active {
-  color: #56CBF9
+header .navbar {
+  color: #56CBF9;
 }
 
 #score{
   width: 100px;
+  height: 4rem;
+  font-size: 1.25rem;
   background-color: #FF729F;
   color: #FAF9F6;
   margin: auto;
+  border-radius: 15px;
+}
+
+button {
+  border-radius: 15px!important;
+  font-size: 1.5rem;
+  height: 3.5rem;
 }
 
 .btn-primary {
-  background-color: #09ACEC;
-  border-color: #09ACEC;
+  background-color: #56CBF9;
+  border-color: #56CBF9;
+  font-size: 1.5rem;
+  height: 3.5rem;
 }
 
 .btn-primary:hover {
-  background-color: #3D4B52;
-  border-color: #3D4B52;
+  background-color: #089DD9;
+  border-color: #089DD9;
+  font-size: 1.25rem;
+  height: 3.5rem; 
+  transform: scale(1.15);
 }
-/* //not working  */
-.btn-secondary:hover {
+
+.btn-primary:disabled {
+  background-color: grey;
+  border-color: grey;
+  font-size: 1.25rem;
+  height: 3.5rem;
+}
+
+.checkactive {
+  background-color: #12CEAF;
+  color: white; 
+  font-size: 1.25rem;
+  height: 3.5rem;
+}
+
+#check:disabled {
+  font-size: 1.25rem;
+  background-color: grey;
+}
+
+.checkactive:hover {
+  background-color: #0FA98F;
+  border-color: #0FA98F;
   color: white;
+  transform: scale(1.15);
+  font-size: 1.25rem;
+  height: 3.5rem;
 }
 
 .option-container {
   background-color: #56CBF9;
   width: 50%;
   height: 3.5rem;
-  color: #333;
+  color: #FAF9F6;
   text-align: center;
   font-size: 1.5rem;
+  border-radius: 15px;
 }
 
+.option-container:hover {
+  transform: scale(1.15);
+}
 
 .correct {
-  background-color: #81F4E1;
+  background-color: green;
 }
 
 .incorrect {
@@ -64,18 +114,27 @@ nav .active {
   pointer-events: none;
 }
 
-.checkactive {
-  background-color: #81F4E1;
-  color: white;
-  
-}
-
 .hidden {
   display: none;
 }
-/* not working */
 
+/* index.html styles */
+#back-buttons {
+  margin-top: 20%;
+}
 
+#back-buttons p {
+  font-size: 1.5rem;
+}
+
+#back-buttons a {
+  border-radius: 15px;
+}
+
+/* lesson.html styles */
+#conclusion a {
+  border-radius: 15px;
+}
 
 
 

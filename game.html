@@ -42,14 +42,13 @@
         </nav>
     </header>
     <section id="welcome" class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-sm-8">
-                <h1>Welcome to the key signature identification challenge!</h1>
-                <h3>Instructions:</h3>
+                <h1 class="mb-4">Welcome to the key signature identification challenge!</h1>
+                <h3 class="mb-4">Instructions:</h3>
                 <p>Ten key signatures will be displayed to you. Underneath, it will specify whether is
-                    major or minor. To give
-                    your answer, type a letter into the input field and choose a sharp or flat with the buttons below if
-                    applicable. Click submit. You will see your score's correct and incorrect answer counter adjust
+                    major or minor. Click on the correct option. Click on the check answer button. You will see your
+                    score's correct answer counter adjust
                     accordingly.
                     Best of luck!</p>
             </div>
@@ -57,9 +56,9 @@
     </section>
     <section class="container-fluid">
         <div id="game" class="quiz-container row d-flex justify-content-center">
-            <div id="image-container" class=""></div>
+            <div id="image-container"></div>
             <h1 id="question" class="mb-4"></h1>
-            <div id="option-container" class="hidden row mb-4 justify-content-center col-md-6 m3-5">
+            <div id="option-container" class="hidden row mb-3 justify-content-center col-md-6 m3-5">
                 <div class="option-container row align-items-center justify-content-center m-1"></div>
                 <div class="option-container row align-items-center justify-content-center m-1"></div>
                 <div class="option-container row align-items-center justify-content-center m-1"></div>
@@ -69,12 +68,12 @@
         <button type="button" class="btn btn-primary mb-3" id="start">Start Game</button>
         <div id="message" class="mb-3"></div>
         <section id="nav-buttons" class="container mb-3 hidden">
-            <div id="score" class="justify-content-center">Score:<br></div>
-            <button type="button" class="btn btn-primary mt-5" id="next">Next Question</button>
-            <button type="button" class="btn btn-primary mt-5" id="submit">Submit</button>
-            <button type="button" class="btn btn-secondary mt-5" id="check" disabled>Check Answer</button>
+            <div id="score" class="row align-items-center justify-content-center">Score:<br></div>
+            <button type="button" class="btn btn-primary mt-4 mx-3" id="next">Next Question</button>
+            <button type="button" class="btn btn-primary mt-4 mx-3" id="submit">Submit</button>
+            <button type="button" class="btn btn-secondary mt-4" id="check" disabled>Check Answer</button>
         </section>
-        <section id="back-buttons" class="hidden mt-5">
+        <section id="back-buttons" class="hidden mt-4">
             <a class="btn btn-primary" href="game.html" role="button">New Game</a>
             <a class="btn btn-primary" href="lesson.html" role="button">Lesson</a>
         </section>
