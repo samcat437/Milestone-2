@@ -45,6 +45,7 @@ button {
   border-color: #56CBF9;
   font-size: 1.5rem;
   height: 3.5rem;
+  border-radius: 15px;
 }
 
 .btn-primary:hover {
@@ -120,7 +121,7 @@ button {
 
 /* index.html styles */
 #back-buttons {
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 #back-buttons p {
@@ -135,6 +136,15 @@ button {
 #conclusion a {
   border-radius: 15px;
 }
+
+li {
+  list-style-type: none;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
 
 
 

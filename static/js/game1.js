@@ -206,6 +206,8 @@ function checkAnswer() {
   let message = document.getElementById("message");
   let nextButton = document.getElementById("next");
 
+  message.classList.remove("hidden");
+  
   if (selectionValue === answer) {
     numCorrect++;
     selection.classList.add("correct");
