@@ -1,0 +1,25 @@
+{
+  "name": "milestone-2",
+  "version": "1.0.0",
+  "description": "As a violin and cello teacher, I've noticed that kids have trouble figuring out key signatures - most likely because they have never been taught how to identify them correctly. This website will address this gap in knowledge and test it with a quiz.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samcat437/Milestone-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samcat437/Milestone-2/issues"
+  },
+  "homepage": "https://github.com/samcat437/Milestone-2#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
