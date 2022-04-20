@@ -119,6 +119,15 @@ button {
   display: none;
 }
 
+#message {
+  font-size: 1.25rem;
+}
+
+.end-game {
+  margin-top: 15%;
+  font-size: 1.5rem;
+}
+
 /* index.html styles */
 #back-buttons {
   margin-top: 15%;
