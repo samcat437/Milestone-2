@@ -121,7 +121,7 @@ function readyQuestion() {
     document.querySelector(".selected").classList.remove("selected");
   }
 
-  newQuestion(n);
+  newQuestion();
 }
 
 /**
@@ -150,14 +150,14 @@ function newQuestion() {
     options[i].innerText = QUESTIONS[n].options[i];
   }
 
-  n++;
-
-  if (n === QUESTIONS.length) {
+  console.log(`N: ${n}`);
+  if (n === QUESTIONS.length-1) {
     submitButton.style.display = "inline-block";
     nextButton.classList.add("hidden");
   };
 
   selectAnswer();
+  n++;
 }
 
 /**
@@ -166,7 +166,7 @@ function newQuestion() {
  */
 function selectAnswer() {
   let options = Array.from(document.querySelectorAll(".option-container"));
-
+  
   options.forEach(option => {
     option.addEventListener("click", () => {
       option.classList.add("selected");
@@ -240,9 +240,9 @@ function submit() {
   backButtons.classList.remove("hidden");
 
   if (numCorrect > 7) {
-    gameContainer.innerHTML = `<div class="end-game mb-5">You scored ${numCorrect} / ${QUESTIONS.length}. Well done! Tap start to try the game again.</div>`;
+    gameContainer.innerHTML = `<div class="end-game p-5 mb-5">You scored ${numCorrect} / ${QUESTIONS.length}. Well done! Tap start to try the game again.</div>`;
   } else {
-    gameContainer.innerHTML = `<div class="end-game mb-5">You scored ${numCorrect} / ${QUESTIONS.length}. Tap the lesson button to review how to identify the key signatures and then try again!</div>`;
+    gameContainer.innerHTML = `<div class="end-game p-5 mb-5">You scored ${numCorrect} / ${QUESTIONS.length}. Tap the lesson button to review how to identify the key signatures, and then try again!</div>`;
   }
 }
 
@@ -256,5 +256,5 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 module.exports = {
-  startGame, readyQuestion, newQuestion
+  startGame, readyQuestion, newQuestion, n, QUESTIONS
 };
