@@ -18,8 +18,8 @@ const QUESTIONS = [{
   {
     question: "What minor key is this?",
     image: `<img src="static/images/c-flat-major.png"/>`,
-    options: ["Bb minor", "C minor", "Db minor", "Eb minor"],
-    answer: "Eb minor"
+    options: ["Bb minor", "C minor", "Db minor", "Ab minor"],
+    answer: "Ab minor"
   },
 
   {
