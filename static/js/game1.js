@@ -3,70 +3,70 @@ let numCorrect = 0;
 
 const QUESTIONS = [{
     question: "What major key is this?",
-    image: `<img src="static/images/e-major.png"/>`,
+    image: `<img src="static/images/e-major.png">`,
     options: ["A major", "C major", "E major", "F# major"],
     answer: "E major"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/f-major.png"/>`,
+    image: `<img src="static/images/f-major.png">`,
     options: ["F major", "G major", "Eb major", "D major"],
     answer: "F major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/c-flat-major.png"/>`,
+    image: `<img src="static/images/c-flat-major.png">`,
     options: ["Bb minor", "C minor", "Db minor", "Ab minor"],
     answer: "Ab minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/c-sharp-major.png"/>`,
+    image: `<img src="static/images/c-sharp-major.png">`,
     options: ["C major", "E major", "F major", "C# major"],
     answer: "C# major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/g-flat-major.png"/>`,
+    image: `<img src="static/images/g-flat-major.png">`,
     options: ["F minor", "D minor", "C minor", "Gb minor"],
     answer: "Gb minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/a-major.png"/>`,
+    image: `<img src="static/images/a-major.png">`,
     options: ["D major", "A major", "B major", "F# major"],
     answer: "A major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/a-flat-major.png"/>`,
+    image: `<img src="static/images/a-flat-major.png">`,
     options: ["B minor", "G minor", "E minor", "F minor"],
     answer: "F minor"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/b-flat-major.png"/>`,
+    image: `<img src="static/images/b-flat-major.png">`,
     options: ["Ab minor", "B minor", "G minor", "C# minor"],
     answer: "G minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/b-major.png"/>`,
+    image: `<img src="static/images/b-major.png">`,
     options: ["C# major", "D major", "B major", "A major"],
     answer: "B major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/e-flat-major.png"/>`,
+    image: `<img src="static/images/e-flat-major.png">`,
     options: ["Bb minor", "C minor", "A minor", "F minor"],
     answer: "C minor"
   }
@@ -100,6 +100,7 @@ function startGame() {
  * It will call the newQuestion function to generate the next question.
  */
 function readyQuestion() {
+  
   let message = document.getElementById("message");
   let checkButton = document.getElementById("check");
   let options = Array.from(document.querySelectorAll(".option-container"));
@@ -120,7 +121,7 @@ function readyQuestion() {
     document.querySelector(".selected").classList.remove("selected");
   }
 
-  newQuestion();
+  newQuestion(n);
 }
 
 /**
@@ -136,9 +137,11 @@ function newQuestion() {
   let options = Array.from(document.querySelectorAll(".option-container"));
   let optionContainer = document.getElementById("option-container");
   let nextButton = document.getElementById("next");
-
+  let submitButton = document.getElementById("submit");
+  
   nextButton.setAttribute("disabled", true);
   optionContainer.classList.remove("hidden");
+
   image.innerHTML = QUESTIONS[n].image;
 
   question.innerHTML = QUESTIONS[n].question;
@@ -148,10 +151,11 @@ function newQuestion() {
   }
 
   n++;
+
   if (n === QUESTIONS.length) {
     submitButton.style.display = "inline-block";
     nextButton.classList.add("hidden");
-  }
+  };
 
   selectAnswer();
 }
