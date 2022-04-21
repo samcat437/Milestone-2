@@ -4,7 +4,7 @@
 
 const { beforeEach, test, expect, beforeAll } = require("@jest/globals");
 
-const {startGame} = require("../game1");
+const {startGame, readyQuestion, newQuestion} = require("../game1");
 
 beforeAll(() => {
   let fs = require("fs");
@@ -25,9 +25,21 @@ describe("DOM tests during startGame function", () => {
     startGame();
     expect(document.getElementById("nav-buttons").classList).toEqual(expect.not.stringContaining("hidden"));
   });
-  test("newQuestion function is called", () => {
-    startGame();
-    const newQuestion = jest.fn();
-    expect(newQuestion).toHaveBeenCalled();
+});
+
+describe("DOM tests during readyQuestion function", () => {
+  test("the disabled class to be removed for each option in the options array", () => {
+    readyQuestion();
+    let options = Array.from(document.querySelectorAll(".option-container"));
+    options.forEach(option => {
+      expect(option.classList).toEqual(expect.not.stringContaining("disabled"));
+    });
+  });
+  test("the hidden class is added to the message element", () => {
+    readyQuestion();
+    expect(document.getElementById("message").classList).toContain("hidden");
+  });
+  test("disabled attribute is added to the check button" , () => {
+    expect(document.getElementById("check").hasAttributes).toContain("disabled");
   });
 });

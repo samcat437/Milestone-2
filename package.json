@@ -19,7 +19,7 @@
     "url": "https://github.com/samcat437/Milestone-2/issues"
   },
   "homepage": "https://github.com/samcat437/Milestone-2#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^27.5.1"
   }
 }
