@@ -74,17 +74,27 @@ As a violin and cello teacher, I've noticed that kids have trouble figuring out 
 Contrast colors of pale blue, pale pink and pale green dominant the scheme. The colors darken when buttons and options are hovered, as well as the buttons expanding. 
 
 ## Typography 
-Nanum Gothic sourced from Google Fonts is used to create a modern and fun look as the site is designed for educational purposes. Sans-serif is the fallback option.
+
+For paragraph text, Nanum Gothic sourced from Google Fonts is used to create a modern and fun look as the site is designed for educational purposes. Sans-serif is the fallback option.
+
+For headings and the nav bar, Gochi Hand from Google Fonts to emphasise the whimsical nature of the site. 
 
 ### Images 
-Images were used from the free site : [pixabay](https://pixabay.com/vectors/key-signatures-keys-music-notation-6792283/) and then cropped for use across the site. 
+
+Images were used from the free site : [pixabay](https://pixabay.com) and then cropped for use across the site. The examples in the quiz and in the nav bar were cropped from this [image](https://pixabay.com/vectors/key-signatures-keys-music-notation-6792283/)
+
+The nav bar was taken from this [one](https://pixabay.com/vectors/music-treble-clef-musical-symbol-39881/).
+
+The backgrounds were taken from these links : [1](https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/) [2](https://pixabay.com/vectors/clouds-pattern-wallpaper-sky-5930599/)
 
 ## Wireframes 
+
 Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/main/docs/keysignatures.pdf)
 
 ### Technologies
 
 ## Languages Used
+
 [HTML 5](https://en.wikipedia.org/wiki/HTML5) : HTML 5 was the main language used across the site.
 
 [CSS 3](https://developer.mozilla.org/en-US/docs/Web/CSS) : CSS 3 was used to style the site.
@@ -92,11 +102,14 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/ma
 [Javascript ES6](https://www.w3schools.com/js/js_es6.asp) : Javascript ES6 was used to manipulate the DOM in order to create the interactive game. 
 
 ### Frameworks Used
+
 [Bootstrap 5.1](https://getbootstrap.com/) : Bootstrap 5 was used to organise the layout of the site, add basic styling, provide spacing and build custom elements. 
 
 [Google Fonts](https://fonts.google.com/) : Google Fonts provided the font "Nanum Gothic" in order to customise and stylise the text. 
 
-[Font Awesome - Free Version](https://fontawesome.com/) : Font Awesome was used to provide the small icons for social media links, visual comprehension of the text for the wedding packages, and as a placeholder for the logo that will be designed to improve the group's branding.
+[Colorzilla](https://www.colorzilla.com/gradient-editor/) : Colorzilla has an ultimate CSS gradient generator that I used to generate the CSS for the background colors of my lesson.html page. 
+
+[html-css-js.com](https://html-css-js.com/html/character-codes/) : I used this page to generate the emojis for my lesson.html page. 
 
 [Git](https://git-scm.com/) : Git is the technology that hosts the Gitpod IDE and terminal where the project was coded. Git then committed and pushed the code to the cloud-based servers on GitHub.
  
@@ -106,3 +119,55 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/ma
 
 [Jest](https://jestjs.io/) : Jest was run through the terminal through Git to run test cases on select functions during automated testing. See the testing section for more information.
 
+[Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) : Chrome Dev tools were utilised for the Javascript console as well to verify the site's responsiveness and visual presentation. 
+
+### Fixed Bugs 
+
+During the development process of the game section, I ran into several problems. One in particular was within the selectAnswer function on line 170 of game1.js. This piece of code loops through the options array, accesses them individually and then assigns a click event listener. I originally had the event listener out of the code loop grouped with the other event listeners that will fire after the DOM is loaded. 
+
+I then was having trouble figuring out how to turn off the event listener once a selection had been made. I wrote it with in the loop with removeEventListener, but this was not working. I finally worked out with my mentor's suggestion that I loop through each option and if the selected class is not present, add the disabled class which turns off pointer events. Once I figured out that could be controlled via CSS, it became a lot easier. 
+
+It is worth noting that I would have perhaps prefered that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant. I have not changed it at this point as my test cases check for its functionality, but the ability for the user to amend their answer could be something to explore in future features. 
+
+### Testing 
+
+## Testing
+
+### Code Validation 
+
+The W3C Markup Validator and W3C CSS Validator Services were used to check each page for syntax errors. 
+
+[W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+[Jshint](https://jshint.com/)
+
+## Automated Tests
+Automated Tests can be found in game1.test.js with in the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that is the right way to learn at my stage of development. Within a professional environment, TDD would be preferable or required. 
+
+During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the index for the questions array which changes the questions as they populate the page. When I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
+
+Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the console as well to verify the site's responsiveness and visual presentation. 
+
+## Deployment 
+
+### Via Github Pages 
+
+1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-1).
+2. Choose "Settings."
+3. Click on "Pages."
+4. Ensure the main branch and the root directory are selected.
+5. Copy and paste the url into the browser or click on the live [link](https://samcat437.github.io/Milestone-1/).
+
+### Via Gitpod
+
+1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-1).
+2. Choose "Gitpod."
+3. In the Bash terminal, type: `python3 -m http.server`
+4. Choose "Make Public" when a blue button appears.
+5. Choose "Open Browser" when the options appears.
+
+### Acknowledgements
+
+Massive thanks to my Code Institute mentor for guiding the student through the development process. Thank you to tutor support for being patient during tutoring sessions. 

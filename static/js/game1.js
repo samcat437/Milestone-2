@@ -150,7 +150,6 @@ function newQuestion() {
     options[i].innerText = QUESTIONS[n].options[i];
   }
 
-  console.log(`N: ${n}`);
   if (n === QUESTIONS.length-1) {
     submitButton.style.display = "inline-block";
     nextButton.classList.add("hidden");
