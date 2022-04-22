@@ -6,6 +6,7 @@
   background-color: #FAF9F6;
 } 
 
+/* game.html styles */
 #welcome {
   margin-top: 15%;
 }
@@ -129,8 +130,17 @@ button {
 }
 
 /* index.html styles */
+#hello-container {
+  padding-top: 15%;
+  background-image: url(../images/cloud-background-small.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%; 
+  font-size: 1.15rem;
+}
+ 
 #back-buttons {
-  margin-top: 15%;
+  padding-bottom: 20%;
 }
 
 #back-buttons p {
@@ -152,6 +162,10 @@ li {
 
 h1, h2 {
   font-weight: 600;
+}
+
+#explanation, #memorise, #major-flat, #identification {
+  background-color: #C3EDFD;
 }
 
 
