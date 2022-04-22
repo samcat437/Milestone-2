@@ -6,6 +6,42 @@
   background-color: #FAF9F6;
 } 
 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: black;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 3rem;
+}
+
+#treble {
+  height: 5rem;
+  width: 5rem;
+}
+.navbar-custom .navbar-brand:hover {
+  color: #089DD9;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #56CBF9;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 3rem;
+}
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #089DD9
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #12CEAF;
+}
+
+h1, h2, h3 {
+  font-family: 'Gochi Hand', cursive;
+}
+
+.btn {
+  font-family: 'Gochi Hand', cursive;
+}
+
 /* game.html styles */
 #welcome {
   margin-top: 15%;
@@ -19,10 +55,6 @@ header {
   background-color: #FAF9F6; 
   color: #56CBF9;
 
-}
-
-header .navbar {
-  color: #56CBF9;
 }
 
 #score{
@@ -127,11 +159,13 @@ button {
 .end-game {
   margin-top: 15%;
   font-size: 1.5rem;
+  font-family: 'Gochi Hand', cursive;
 }
 
 /* index.html styles */
 #hello-container {
   padding-top: 15%;
+  /* https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/ */
   background-image: url(../images/cloud-background-small.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -165,9 +199,13 @@ h1, h2 {
 }
 
 #explanation, #memorise, #major-flat, #identification {
-  background-color: #C3EDFD;
+  background-color: #EBF9FE;
+  border-bottom: 1px solid #FFADC7;
 }
 
+#intro, #major-sharp, #minor {
+  border-bottom: 1px solid #FFADC7;
+}
 
 
 
