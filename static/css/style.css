@@ -1,237 +1,252 @@
  body {
-  font-family: 'Nanum Gothic', sans-serif;
-  color: #333;
-  font-weight: 300;
-  text-align: center;
-  background-color: #FAF9F6;
-} 
+   font-family: 'Nanum Gothic', sans-serif;
+   color: #333;
+   font-weight: 300;
+   text-align: center;
+   background-color: #FAF9F6;
+   
+ }
 
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: black;
-    font-family: 'Gochi Hand', cursive;
-    font-size: 3rem;
-}
+ .navbar-custom .navbar-brand,
+ .navbar-custom .navbar-text {
+   color: black;
+   font-family: 'Gochi Hand', cursive;
+   font-size: 3rem;
+ }
 
-@media only screen and (max-width: 1000px) {
-  .navbar-custom .navbar-brand,
-  .navbar-custom .navbar-text {
-    font-size: 1rem;
-}
-#treble {
-  height: 2rem;
-  width: 1rem;
-}
-}
-@media only screen and (min-width: 1000px) {
-  #treble {
-    height: 5rem;
-    width: 2.5rem;
-  }
-}
+ @media only screen and (max-width: 1000px) {
 
-.navbar-custom .navbar-brand:hover {
-  color: #089DD9;
-}
+   .navbar-custom .navbar-brand,
+   .navbar-custom .navbar-text {
+     font-size: 1rem;
+   }
 
-.navbar-custom .navbar-nav .nav-link {
-  color: #56CBF9;
-  font-family: 'Gochi Hand', cursive;
-  font-size: 3rem;
-}
-.navbar-custom .navbar-nav .nav-link:hover {
-  color: #089DD9
-}
+   #treble {
+     height: 2rem;
+     width: 1rem;
+   }
+ }
 
-.navbar-light .navbar-nav .nav-link.active {
-  color: #12CEAF;
-}
+ @media only screen and (min-width: 1000px) {
+   #treble {
+     height: 5rem;
+     width: 2.5rem;
+   }
+ }
 
-h1, h2, h3 {
-  font-family: 'Gochi Hand', cursive;
-}
+ .navbar-custom .navbar-brand:hover {
+   color: #089DD9;
+ }
 
-.btn {
-  font-family: 'Gochi Hand', cursive;
-}
+ .navbar-custom .navbar-nav .nav-link {
+   color: #56CBF9;
+   font-family: 'Gochi Hand', cursive;
+   font-size: 3rem;
+ }
 
-/* game.html styles */
-#game-body {
-  background-image: url(../images/clouds-rpt-big.png);
-  background-repeat: no-repeat;
-  background-position: center top;
-}
+ .navbar-custom .navbar-nav .nav-link:hover {
+   color: #089DD9
+ }
 
-#welcome {
-  margin-top: 15%;
-}
+ .navbar-light .navbar-nav .nav-link.active {
+   color: #12CEAF;
+ }
 
-#welcome p {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
+ h1,
+ h2,
+ h3 {
+   font-family: 'Gochi Hand', cursive;
+ }
 
-header {
-  background-color: #FAF9F6; 
-  color: #56CBF9;
+ .btn {
+   font-family: 'Gochi Hand', cursive;
+ }
 
-}
+ /* game.html styles */
+ #game-body {
+   background-image: url(../images/clouds-rpt-big.png);
+   background-repeat: no-repeat;
+   background-position: center top;
+ }
 
-#score{
-  width: 100px;
-  height: 4rem;
-  font-size: 1.25rem;
-  background-color: #FF729F;
-  color: #FAF9F6;
-  margin: auto;
-  border-radius: 15px;
-}
+ #welcome {
+   margin-top: 15%;
+ }
 
-button {
-  border-radius: 15px!important;
-  font-size: 1.5rem;
-  height: 3.5rem;
-}
+ #welcome p {
+   font-size: 1.25rem;
+   font-weight: 600;
+ }
 
-.btn-primary {
-  background-color: #56CBF9;
-  border-color: #56CBF9;
-  font-size: 1.5rem;
-  height: 3.5rem;
-  border-radius: 15px;
-}
+ header {
+   background-color: #FAF9F6;
+   color: #56CBF9;
 
-.btn-primary:hover {
-  background-color: #089DD9;
-  border-color: #089DD9;
-  font-size: 1.25rem;
-  height: 3.5rem; 
-  transform: scale(1.15);
-}
+ }
 
-.btn-primary:disabled {
-  background-color: grey;
-  border-color: grey;
-  font-size: 1.25rem;
-  height: 3.5rem;
-}
+ #score {
+   width: 100px;
+   height: 4rem;
+   font-size: 1.25rem;
+   background-color: #FF729F;
+   color: #FAF9F6;
+   margin: auto;
+   border-radius: 15px;
+ }
 
-.checkactive {
-  background-color: #12CEAF;
-  color: white; 
-  font-size: 1.25rem;
-  height: 3.5rem;
-}
+ button {
+   border-radius: 15px !important;
+   font-size: 1.5rem;
+   height: 3.5rem;
+ }
 
-#check:disabled {
-  font-size: 1.25rem;
-  background-color: grey;
-}
+ .btn-primary {
+   background-color: #56CBF9;
+   border-color: #56CBF9;
+   font-size: 1.5rem;
+   height: 3.5rem;
+   border-radius: 15px;
+ }
 
-.checkactive:hover {
-  background-color: #0FA98F;
-  border-color: #0FA98F;
-  color: white;
-  transform: scale(1.15);
-  font-size: 1.25rem;
-  height: 3.5rem;
-}
+ .btn-primary:hover {
+   background-color: #089DD9;
+   border-color: #089DD9;
+   font-size: 1.25rem;
+   height: 3.5rem;
+   transform: scale(1.15);
+ }
 
-.option-container {
-  background-color: #56CBF9;
-  width: 50%;
-  height: 3.5rem;
-  color: #FAF9F6;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 15px;
-}
+ .btn-primary:disabled {
+   background-color: grey;
+   border-color: grey;
+   font-size: 1.25rem;
+   height: 3.5rem;
+ }
 
-.option-container:hover {
-  transform: scale(1.15);
-}
+ .checkactive {
+   background-color: #12CEAF;
+   color: white;
+   font-size: 1.25rem;
+   height: 3.5rem;
+ }
 
-.correct {
-  background-color: green;
-}
+ #check:disabled {
+   font-size: 1.25rem;
+   background-color: grey;
+ }
 
-.incorrect {
-  background-color: red;
-}
+ .checkactive:hover {
+   background-color: #0FA98F;
+   border-color: #0FA98F;
+   color: white;
+   transform: scale(1.15);
+   font-size: 1.25rem;
+   height: 3.5rem;
+ }
 
-.selected {
-  background-color: #FF729F;
-  color: #56CBF9;
-}
+ .option-container {
+   background-color: #56CBF9;
+   width: 50%;
+   height: 3.5rem;
+   color: #FAF9F6;
+   text-align: center;
+   font-size: 1.5rem;
+   border-radius: 15px;
+ }
 
-.disabled {
-  pointer-events: none;
-}
+ .option-container:hover {
+   transform: scale(1.15);
+ }
 
-.hidden {
-  display: none;
-}
+ .correct {
+   background-color: green;
+ }
 
-#message {
-  font-size: 1.25rem;
-}
+ .incorrect {
+   background-color: red;
+ }
 
-.end-game {
-  margin-top: 15%;
-  font-size: 1.5rem;
-  font-family: 'Gochi Hand', cursive;
-}
+ .selected {
+   background-color: #FF729F;
+   color: #56CBF9;
+ }
 
-/* index.html styles */
-#hello-container {
-  padding-top: 15%;
-  /* https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/ */
-  background-image: url(../images/cloud-background-small.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%; 
-  font-size: 1.15rem;
-}
+ .disabled {
+   pointer-events: none;
+ }
+
+ .hidden {
+   display: none;
+ }
+
+ #message {
+   font-size: 1.25rem;
+   font-family: 'Gochi Hand', cursive;
+ }
+
+ .end-game {
+   margin-top: 15%;
+   font-size: 1.5rem;
+   font-family: 'Gochi Hand', cursive;
+ }
+
+ /* index.html styles */
+ #hello-container {
+   padding-top: 15%;
+   /* https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/ */
+   background-image: url(../images/cloud-background-small.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100%;
+   font-size: 1.15rem;
+ }
+
  /*not working for super large screen sizes  */
-@media only screen and (min-width: 2399px) {
-  #hello-container {
-    padding-top: 3.5rem;
-  }
-}
+ @media only screen and (min-width: 2399px) {
+   #hello-container {
+     padding-top: 3.5rem;
+   }
+ }
 
-#back-buttons {
-  padding-bottom: 20%;
-}
+ #back-buttons {
+   padding-bottom: 20%;
+ }
 
-#back-buttons p {
-  font-size: 1.5rem;
-}
+ #back-buttons p {
+   font-size: 1.5rem;
+ }
 
-#back-buttons a {
-  border-radius: 15px;
-}
+ #back-buttons a {
+   border-radius: 15px;
+ }
 
-/* lesson.html styles */
-#conclusion a {
-  border-radius: 15px;
-}
+ /* lesson.html styles */
+ #conclusion a {
+   border-radius: 15px;
+ }
 
-li {
-  list-style-type: none;
-}
+ li {
+   list-style-type: none;
+ }
 
-h1, h2 {
-  font-weight: 600;
-}
+ h1,
+ h2 {
+   font-weight: 600;
+ }
 
-#explanation, #memorise, #major-flat, #identification {
- /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d6f0ff+0,cbebff+53,f0f9ff+100 */
-background: #d6f0ff; /* Old browsers */
-background: -moz-linear-gradient(top,  #d6f0ff 0%, #cbebff 53%, #f0f9ff 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #d6f0ff 0%,#cbebff 53%,#f0f9ff 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #d6f0ff 0%,#cbebff 53%,#f0f9ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f0ff', endColorstr='#f0f9ff',GradientType=0 ); /* IE6-9 */
-}
-
-
-
+ #explanation,
+ #memorise,
+ #major-flat,
+ #identification {
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d6f0ff+0,cbebff+53,f0f9ff+100 */
+   background: #d6f0ff;
+   /* Old browsers */
+   background: -moz-linear-gradient(top, #d6f0ff 0%, #cbebff 53%, #f0f9ff 100%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #d6f0ff 0%, #cbebff 53%, #f0f9ff 100%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #d6f0ff 0%, #cbebff 53%, #f0f9ff 100%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6f0ff', endColorstr='#f0f9ff', GradientType=0);
+   /* IE6-9 */
+ }

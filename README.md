@@ -2,6 +2,8 @@
 
 As a violin and cello teacher, I've noticed that kids have trouble figuring out key signatures - most likely because they have never been taught how to identify them correctly. This website will address this gap in knowledge and test it with a quiz. 
 
+View the live link [here](https://samcat437.github.io/Milestone-2/index.html)
+
 # User Experience
 
 ## User Stories
@@ -21,7 +23,7 @@ As a violin and cello teacher, I've noticed that kids have trouble figuring out 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
 2. As a visiting user, I would like to click on a button in order to make a response. 
 3. As a visiting user, I would like to check my answer.
-4. As a visiting user, I would like to view my correct answers in the score section.   
+4. As a visiting user, I would like to view how many correct answers I had in the score section. 
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar. 
 
 ## Features
@@ -34,7 +36,7 @@ As a violin and cello teacher, I've noticed that kids have trouble figuring out 
     * Lesson
     * Quiz
 3. Clicking on the relevant navigation option will redirect the user to that page.
-4. Navbar will be sticky.
+4. Navbar will be sticky on the lessons page.
 5. Navbar on desktop will display all options. On mobile, once the hamburger is clicked, the navigation options will appear. 
  
  ### Home Page
@@ -109,6 +111,8 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/ma
 
 [Colorzilla](https://www.colorzilla.com/gradient-editor/) : Colorzilla has an ultimate CSS gradient generator that I used to generate the CSS for the background colors of my lesson.html page. 
 
+[Coolors](https://coolors.co/) : Coolors is a colour palette generator I used to create colors that worked together for the site.
+
 [html-css-js.com](https://html-css-js.com/html/character-codes/) : I used this page to generate the emojis for my lesson.html page. 
 
 [Git](https://git-scm.com/) : Git is the technology that hosts the Gitpod IDE and terminal where the project was coded. Git then committed and pushed the code to the cloud-based servers on GitHub.
@@ -129,26 +133,68 @@ I then was having trouble figuring out how to turn off the event listener once a
 
 It is worth noting that I would have perhaps prefered that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant. I have not changed it at this point as my test cases check for its functionality, but the ability for the user to amend their answer could be something to explore in future features. 
 
-### Testing 
-
-## Testing
+## Testing 
 
 ### Code Validation 
 
-The W3C Markup Validator and W3C CSS Validator Services were used to check each page for syntax errors. 
+The W3C Markup Validator, W3C CSS Validator and Jshint Services were used to check each page for syntax errors. 
 
-[W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+[W3C Markup Validator](https://validator.w3.org/)
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+[index.html]() - The validator flagged that my image tag on line 25 was missing an alt tag. 
+[lesson.html]() - The validator flagged that my images with in the lesson content were missing alt tags.
+[game.html]() - The validator notified me that I had an empty h1 element on line 62. This is a container for the quiz question. To fix this, I added some placeholder text and then added the hidden class from my CSS and then added some additional Javascript to remove this class when the game is started. 
+    The validator also notified me that lines 72 and 78 where I have section tags, I need to have heading elements to correspond. I changed these to div elements to rectify. 
+    I also forgot to close my section element on line 59. 
 
-[Jshint](https://jshint.com/)
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+[style.css]() - Hooray - no errors found. 
+
+[Jshint](https://jshint.com/) - There were a few unnecessary semicolons that I removed as per the validator; however, there were a number of notifications that my code was for Javascript ES6, which is the version that I intended to write my code in, so I don't see a reason to take action from these notifications. 
 
 ## Automated Tests
+
 Automated Tests can be found in game1.test.js with in the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that is the right way to learn at my stage of development. Within a professional environment, TDD would be preferable or required. 
 
 During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the index for the questions array which changes the questions as they populate the page. When I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
 
 Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the console as well to verify the site's responsiveness and visual presentation. 
+
+## Manual Testing 
+
+The webpage was tested regularly through development via Chrome developer tools. The Github Pages link was tested on a number of devices including iPhone XR, iPad 2nd Gen, iPad Air 2, HP Envy Laptop, and Macbook Pro. I tested it on Chrome, Edge, Safari and Firefox. 
+
+### Test Cases based on User Stories
+
+#### Home Page
+
+1. As a visiting user, I would like to understand what the purpose of the website is.
+    * When first loading the page, the user sees the message on the home page which greets the user and addresses the purpose of the webpage. 
+2. As a visiting user, I would like to navigate towards the lessons page and the quiz page.
+    * The user sees the lesson and game page buttons which take them to the relevant pages. They can also navigate via the navbar.
+[View the home page here]()
+
+#### Lesson Page
+
+1. As a visiting user, I would like to view content of the website. 
+    * The user is able to view the lesson content is a scrollable, narrative layout.
+    [Lesson Page top]()
+2. As a visiting user, I would like to navigate towards the quiz page. 
+    * The user is invited to the game page via a button at the bottom of the lesson content. They can also skip to the game page via the navbar.
+    [Lesson Page bottom]()
+
+#### Game Page
+
+1. As a visiting user, I would like to view the question displayed on page one at a time. 
+    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question]()
+2. As a visiting user, I would like to click on a button in order to make a response. 
+    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made]()
+3. As a visiting user, I would like to check my answer.
+    * The user checks their answer by clikcing on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer]()
+4. As a visiting user, I would like to view how many correct answers I had in the score section.   
+    * When a user selects an answer correctly, the score counter increments. [Game Page Score]()
+5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
+    * The user is able to scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
 
 ## Deployment 
 
