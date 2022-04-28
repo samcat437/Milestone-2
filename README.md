@@ -2,7 +2,7 @@
 
 As a violin and cello teacher, I've noticed that kids have trouble figuring out key signatures - most likely because they have never been taught how to identify them correctly. This website will address this gap in knowledge and test it with a quiz. 
 
-View the live link [here](https://samcat437.github.io/Milestone-2/index.html)
+View the live link [here](https://samcat437.github.io/Milestone-2/)
 
 # User Experience
 
@@ -131,7 +131,7 @@ During the development process of the game section, I ran into several problems.
 
 I then was having trouble figuring out how to turn off the event listener once a selection had been made. I wrote it with in the loop with removeEventListener, but this was not working. I finally worked out with my mentor's suggestion that I loop through each option and if the selected class is not present, add the disabled class which turns off pointer events. Once I figured out that could be controlled via CSS, it became a lot easier. 
 
-It is worth noting that I would have perhaps prefered that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant. I have not changed it at this point as my test cases check for its functionality, but the ability for the user to amend their answer could be something to explore in future features. 
+It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality, but the ability for the user to amend their answer could be something to explore in future features. 
 
 ## Testing 
 
@@ -141,20 +141,22 @@ The W3C Markup Validator, W3C CSS Validator and Jshint Services were used to che
 
 [W3C Markup Validator](https://validator.w3.org/)
 
-[index.html]() - The validator flagged that my image tag on line 25 was missing an alt tag. 
-[lesson.html]() - The validator flagged that my images with in the lesson content were missing alt tags.
-[game.html]() - The validator notified me that I had an empty h1 element on line 62. This is a container for the quiz question. To fix this, I added some placeholder text and then added the hidden class from my CSS and then added some additional Javascript to remove this class when the game is started. 
+[index.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/index.html%20W3C%20markup%20-%20AAKS.png) - The validator flagged that my image tag on line 25 was missing an alt tag. 
+[lesson.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/lesson.html%20W3C%20markup%20-%20ABKS.png) - The validator flagged that my images with in the lesson content were missing alt tags.
+[game.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/game.html%20W3C%20validator%20-%20AAKS.png) - The validator notified me that I had an empty h1 element on line 62. This is a container for the quiz question. To fix this, I added some placeholder text and then added the hidden class from my CSS and then added some additional Javascript to remove this class when the game is started. 
     The validator also notified me that lines 72 and 78 where I have section tags, I need to have heading elements to correspond. I changed these to div elements to rectify. 
     I also forgot to close my section element on line 59. 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
-[style.css]() - Hooray - no errors found. 
+[style.css](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/CSS%20validator%20-%20AAKS.png) - Hooray - no errors found. 
 
-[Jshint](https://jshint.com/) - There were a few unnecessary semicolons that I removed as per the validator; however, there were a number of notifications that my code was for Javascript ES6, which is the version that I intended to write my code in, so I don't see a reason to take action from these notifications. 
+[Jshint](https://jshint.com/) - There were a few unnecessary semicolons that I removed as per the validator; however, there were a number of notifications that my code was for Javascript ES6, which is the version that I intended to write my code in, so I don't see a reason to take action from these [notifications](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/Jshint%20-%20AAKS.png). 
 
 ## Automated Tests
 
-Automated Tests can be found in game1.test.js with in the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that is the right way to learn at my stage of development. Within a professional environment, TDD would be preferable or required. 
+Automated Tests can be found in game1.test.js with in the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. 
+
+I tested that DOM elements were appearing and disappearing as appropriate for my first three functions - startGame, readyQuestion, and newQuestion. I tested this with Jest and by using their [documentation](https://jestjs.io/docs/getting-started).
 
 During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the index for the questions array which changes the questions as they populate the page. When I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
 
@@ -172,27 +174,27 @@ The webpage was tested regularly through development via Chrome developer tools.
     * When first loading the page, the user sees the message on the home page which greets the user and addresses the purpose of the webpage. 
 2. As a visiting user, I would like to navigate towards the lessons page and the quiz page.
     * The user sees the lesson and game page buttons which take them to the relevant pages. They can also navigate via the navbar.
-[View the home page here]()
+[View the home page here](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/home%20AAKS.png)
 
 #### Lesson Page
 
 1. As a visiting user, I would like to view content of the website. 
     * The user is able to view the lesson content is a scrollable, narrative layout.
-    [Lesson Page top]()
+    [Lesson Page top](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/lesson-top.png)
 2. As a visiting user, I would like to navigate towards the quiz page. 
     * The user is invited to the game page via a button at the bottom of the lesson content. They can also skip to the game page via the navbar.
-    [Lesson Page bottom]()
+    [Lesson Page bottom](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/lesson-bottom.png)
 
 #### Game Page
 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
-    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question]()
+    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20question%20display.png)
 2. As a visiting user, I would like to click on a button in order to make a response. 
-    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made]()
+    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20selection%20made.png)
 3. As a visiting user, I would like to check my answer.
-    * The user checks their answer by clikcing on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer]()
+    * The user checks their answer by clikcing on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20check%20answer.png)
 4. As a visiting user, I would like to view how many correct answers I had in the score section.   
-    * When a user selects an answer correctly, the score counter increments. [Game Page Score]()
+    * When a user selects an answer correctly, the score counter increments. [Game Page Score](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20score%20.png)
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
     * The user is able to scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
 
@@ -204,11 +206,11 @@ The webpage was tested regularly through development via Chrome developer tools.
 2. Choose "Settings."
 3. Click on "Pages."
 4. Ensure the main branch and the root directory are selected.
-5. Copy and paste the url into the browser or click on the live [link](https://samcat437.github.io/Milestone-1/).
+5. Copy and paste the url into the browser or click on the live [link](https://samcat437.github.io/Milestone-2/).
 
 ### Via Gitpod
 
-1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-1).
+1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-2).
 2. Choose "Gitpod."
 3. In the Bash terminal, type: `python3 -m http.server`
 4. Choose "Make Public" when a blue button appears.
@@ -216,4 +218,4 @@ The webpage was tested regularly through development via Chrome developer tools.
 
 ### Acknowledgements
 
-Massive thanks to my Code Institute mentor for guiding the student through the development process. Thank you to tutor support for being patient during tutoring sessions. 
+Massive thanks to my Code Institute mentor for guiding me through the development process. Thank you to tutor support for being patient during tutoring sessions. 
