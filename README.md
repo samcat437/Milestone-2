@@ -36,7 +36,7 @@ View the live link [here](https://samcat437.github.io/Milestone-2/)
     * Lesson
     * Quiz
 3. Clicking on the relevant navigation option will redirect the user to that page.
-4. Navbar will be sticky on the lessons page.
+4. Navbar will be sticky on the lesson page.
 5. Navbar on desktop will display all options. On mobile, once the hamburger is clicked, the navigation options will appear. 
  
  ### Home Page
@@ -50,17 +50,17 @@ View the live link [here](https://samcat437.github.io/Milestone-2/)
 
  1. The lesson page will be clearly layed out into sections.    
   * What is a key signature? 
-  * How to find relative major or minor. 
+  * How to find relative major or minor 
   * Must be memorized key signatures 
   * Major key signatures
   * Minor key signatures 
-  * Is there a minor key shortcut
+  * Is there a minor key shortcut?
   * Is it major or minor? 
 2. There will be a button to redirect the user to the game page where they can put their skills to the test. 
 
 ### Game Page 
 
-1. There will be a message first to imform the user how to use the application. Clicking the start button will clear this and generate the first question.
+1. There will be a message first to inform the user how to use the application. Clicking the start button will clear this and generate the first question.
 2. The user will then be able to view the first question. 
     Questions will consist of an image of a key signature and a question attached to inform the user whether it is a major or minor key signature they are identifying. 
 3. The user will be able to click on an option to select it.  
@@ -83,15 +83,15 @@ For headings and the nav bar, Gochi Hand from Google Fonts to emphasise the whim
 
 ### Images 
 
-Images were used from the free site : [pixabay](https://pixabay.com) and then cropped for use across the site. The examples in the quiz and in the nav bar were cropped from this [image](https://pixabay.com/vectors/key-signatures-keys-music-notation-6792283/)
+Images were used from the free site : [pixabay](https://pixabay.com) and then cropped for use across the site. The examples in the quiz and in the nav bar were cropped from this [image](https://pixabay.com/vectors/key-signatures-keys-music-notation-6792283/).
 
 The nav bar was taken from this [one](https://pixabay.com/vectors/music-treble-clef-musical-symbol-39881/).
 
-The backgrounds were taken from these links : [1](https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/) [2](https://pixabay.com/vectors/clouds-pattern-wallpaper-sky-5930599/)
+The backgrounds were taken from these links : [index.html background](https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/) [game.html background](https://pixabay.com/vectors/clouds-pattern-wallpaper-sky-5930599/).
 
 ## Wireframes 
 
-Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/main/docs/keysignatures.pdf)
+Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/tree/main/docs/Wireframes).
 
 ### Technologies
 
@@ -107,7 +107,7 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/ma
 
 [Bootstrap 5.1](https://getbootstrap.com/) : Bootstrap 5 was used to organise the layout of the site, add basic styling, provide spacing and build custom elements. 
 
-[Google Fonts](https://fonts.google.com/) : Google Fonts provided the font "Nanum Gothic" in order to customise and stylise the text. 
+[Google Fonts](https://fonts.google.com/) : Google Fonts provided the font "Nanum Gothic" and "Gochi Hand" in order to customise and stylise the text. 
 
 [Colorzilla](https://www.colorzilla.com/gradient-editor/) : Colorzilla has an ultimate CSS gradient generator that I used to generate the CSS for the background colors of my lesson.html page. 
 
@@ -123,15 +123,15 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/ma
 
 [Jest](https://jestjs.io/) : Jest was run through the terminal through Git to run test cases on select functions during automated testing. See the testing section for more information.
 
-[Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) : Chrome Dev tools were utilised for the Javascript console as well to verify the site's responsiveness and visual presentation. 
+[Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) : Chrome Dev tools were utilised for the Javascript console as well as to verify the site's responsiveness and visual presentation. 
 
 ### Fixed Bugs 
 
-During the development process of the game section, I ran into several problems. One in particular was within the selectAnswer function on line 170 of game1.js. This piece of code loops through the options array, accesses them individually and then assigns a click event listener. I originally had the event listener out of the code loop grouped with the other event listeners that will fire after the DOM is loaded. 
+During the development process of the game section, I ran into several problems. One in particular was within the selectAnswer function on line 168 of game1.js. This piece of code loops through the options array, accesses them individually and then assigns a click event listener. I originally had the event listener out of the code loop grouped with the other event listeners that will fire after the DOM is loaded. 
 
-I then was having trouble figuring out how to turn off the event listener once a selection had been made. I wrote it with in the loop with removeEventListener, but this was not working. I finally worked out with my mentor's suggestion that I loop through each option and if the selected class is not present, add the disabled class which turns off pointer events. Once I figured out that could be controlled via CSS, it became a lot easier. 
+I then was having trouble figuring out how to turn off the event listener once a selection had been made. I wrote it within the loop with removeEventListener, but this was not working. I finally worked out with my mentor's suggestion that I loop through each option and if the selected class is not present, add the disabled class which turns off pointer events in the CSS file. Once I figured out that could be controlled via CSS, it became a lot easier. 
 
-It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality, but the ability for the user to amend their answer could be something to explore in future features. 
+It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality within this context. The ability for the user to amend their answer could be something to explore in future features. 
 
 ## Testing 
 
@@ -141,26 +141,25 @@ The W3C Markup Validator, W3C CSS Validator and Jshint Services were used to che
 
 [W3C Markup Validator](https://validator.w3.org/)
 
-[index.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/index.html%20W3C%20markup%20-%20AAKS.png) - The validator flagged that my image tag on line 25 was missing an alt tag. 
-[lesson.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/lesson.html%20W3C%20markup%20-%20ABKS.png) - The validator flagged that my images with in the lesson content were missing alt tags.
-[game.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/game.html%20W3C%20validator%20-%20AAKS.png) - The validator notified me that I had an empty h1 element on line 62. This is a container for the quiz question. To fix this, I added some placeholder text and then added the hidden class from my CSS and then added some additional Javascript to remove this class when the game is started. 
-    The validator also notified me that lines 72 and 78 where I have section tags, I need to have heading elements to correspond. I changed these to div elements to rectify. 
-    I also forgot to close my section element on line 59. 
+* [index.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/index.html%20W3C%20markup%20-%20AAKS.png) - The validator flagged that my image tag on line 25 was missing an alt tag. 
+* [lesson.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/lesson.html%20W3C%20markup%20-%20ABKS.png) - The validator flagged that my images within the lesson content were missing alt tags.
+* [game.html](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/game.html%20W3C%20validator%20-%20AAKS.png) - The validator notified me that I had an empty h1 element on line 62. This is a container for the quiz question. To fix this, I added some placeholder text and then added the hidden class from my CSS and then added some additional Javascript to remove this class when the game is started. The validator also notified me that lines 72 and 78 where I have section tags, I need to have heading elements to correspond. I changed these to div elements to rectify. I also forgot to close my section element on line 59. 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+
 [style.css](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/CSS%20validator%20-%20AAKS.png) - Hooray - no errors found. 
 
-[Jshint](https://jshint.com/) - There were a few unnecessary semicolons that I removed as per the validator; however, there were a number of notifications that my code was for Javascript ES6, which is the version that I intended to write my code in, so I don't see a reason to take action from these [notifications](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/Jshint%20-%20AAKS.png). 
+[Jshint](https://jshint.com/) - There were a few unnecessary semicolons that I removed as per the validator's instruction; however, there were a number of notifications that my code was for Javascript ES6, which is the version that I intended to write my code in, so I don't see a reason to take action from these [notifications](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/Jshint%20-%20AAKS.png). 
 
 ## Automated Tests
 
-Automated Tests can be found in game1.test.js with in the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. 
+Automated Tests can be found in game1.test.js within the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that this is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. 
 
 I tested that DOM elements were appearing and disappearing as appropriate for my first three functions - startGame, readyQuestion, and newQuestion. I tested this with Jest and by using their [documentation](https://jestjs.io/docs/getting-started).
 
-During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the index for the questions array which changes the questions as they populate the page. When I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
+During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the variable representing the index for the questions array which changes the questions as they populate the page and the user clicks the next question button. I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
 
-Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the console as well to verify the site's responsiveness and visual presentation. 
+Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the use of the console as well to verify the site's responsiveness and visual presentation. 
 
 ## Manual Testing 
 
@@ -192,7 +191,7 @@ The webpage was tested regularly through development via Chrome developer tools.
 2. As a visiting user, I would like to click on a button in order to make a response. 
     * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20selection%20made.png)
 3. As a visiting user, I would like to check my answer.
-    * The user checks their answer by clikcing on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20check%20answer.png)
+    * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20check%20answer.png)
 4. As a visiting user, I would like to view how many correct answers I had in the score section.   
     * When a user selects an answer correctly, the score counter increments. [Game Page Score](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20score%20.png)
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
