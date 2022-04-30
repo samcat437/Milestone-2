@@ -84,12 +84,14 @@ function startGame() {
   let startButton = document.getElementById("start");
   let submitButton = document.getElementById("submit");
   let questionContainer = document.getElementById("question");
+  let nextButton = document.getElementById("next");
 
   welcome.style.display = "none";
   questionContainer.classList.remove("hidden");
   buttonsContainer.classList.remove("hidden");
   startButton.style.display = "none";
   submitButton.style.display = "none";
+  nextButton.classList.add("hidden");
 
   newQuestion();
 }
@@ -112,8 +114,7 @@ function readyQuestion() {
   });
 
   message.classList.add("hidden");
-  checkButton.setAttribute("disabled", true);
-
+  checkButton.classList.remove("hidden");
 
   if (document.querySelector(".correct")) {
     document.querySelector(".correct").classList.remove("correct");
@@ -141,8 +142,8 @@ function newQuestion() {
   let nextButton = document.getElementById("next");
   let submitButton = document.getElementById("submit");
 
-  nextButton.setAttribute("disabled", true);
   optionContainer.classList.remove("hidden");
+  nextButton.classList.add("hidden");
 
   image.innerHTML = QUESTIONS[n].image;
 
@@ -197,7 +198,7 @@ function exposeCheck() {
  * If they are not the same, the incorrect class is adding turning the option red. A message is displayed to tell the user that they were correct, and tells the correct answer. 
  * If correct, the score increments by 1. 
  * If incorrect, the score does not increment.
- * The disabled attribute is removed from the next button, and the readyQuestion function is called. 
+ * The readyQuestion function is called. 
  */
 function checkAnswer() {
 
@@ -208,6 +209,7 @@ function checkAnswer() {
   let score = document.getElementById("score");
   let message = document.getElementById("message");
   let nextButton = document.getElementById("next");
+  let checkButton = document.getElementById("check");
 
   message.classList.remove("hidden");
 
@@ -220,10 +222,12 @@ function checkAnswer() {
     message.innerHTML = `Oops! The correct answer is ${answer}.`;
   }
 
+  checkButton.classList.add("hidden");
   score.innerHTML = `<div>Score: <br>${numCorrect} / ${QUESTIONS.length}</div>`;
   selection.classList.remove("selected");
-  nextButton.removeAttribute("disabled");
+  nextButton.classList.remove("hidden");
   nextButton.addEventListener("click", readyQuestion);
+  
 }
 
 /**

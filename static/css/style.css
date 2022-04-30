@@ -4,7 +4,6 @@
    font-weight: 300;
    text-align: center;
    background-color: #FAF9F6;
-   
  }
 
  .navbar-custom .navbar-brand,
@@ -12,6 +11,7 @@
    color: black;
    font-family: 'Gochi Hand', cursive;
    font-size: 3rem;
+   background-color: #FAF9F6;
  }
 
  @media only screen and (max-width: 1000px) {
@@ -86,7 +86,7 @@
 
  #score {
    width: 100px;
-   height: 4rem;
+   height: 3.75rem;
    font-size: 1.25rem;
    background-color: #FF729F;
    color: #FAF9F6;
@@ -183,6 +183,28 @@
    font-size: 1.25rem;
    font-family: 'Gochi Hand', cursive;
  }
+
+ @media only screen and (max-width: 576px) {
+   #game-body {
+     position: relative;
+     padding-top: 4rem;
+   }
+
+   #score {
+     font-size: 1rem;
+     height: 2.25;
+   }
+
+   #nav-container {
+     position: absolute;
+     width: auto;
+   }
+
+   nav.navbar.navbar-custom.navbar-expand-lg.navbar-light {
+     padding: 0px;
+   }
+ }
+
 
  .end-game {
    margin-top: 15%;
