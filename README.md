@@ -127,7 +127,7 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/tree/ma
 
 [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) : Chrome Dev tools were utilised for the Javascript console as well as to verify the site's responsiveness and visual presentation. 
 
-### Fixed Bugs 
+### Bugs 
 
 During the development process of the game section, I ran into several problems. One in particular was within the selectAnswer function on line 168 of game1.js. This piece of code loops through the options array, accesses them individually and then assigns a click event listener. I originally had the event listener out of the code loop grouped with the other event listeners that will fire after the DOM is loaded. 
 
@@ -191,13 +191,13 @@ The webpage was tested regularly through development via Chrome developer tools.
 #### Game Page
 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
-    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question]()
+    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button after checking my answer. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-next-question.png)
 2. As a visiting user, I would like to click on a button in order to make a response. 
-    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made]()
+    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-selection.png)
 3. As a visiting user, I would like to check my answer.
-    * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer]()
+    * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-answer.png)
 4. As a visiting user, I would like to view how many correct answers I had in the score section.   
-    * When a user selects an answer correctly, the score counter increments. [Game Page Score]()
+    * When a user selects an answer correctly, the score counter increments. [Game Page Score](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-score-increment.png)
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
     * The user is able to scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
 
@@ -205,7 +205,7 @@ The webpage was tested regularly through development via Chrome developer tools.
 
 ### Via Github Pages 
 
-1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-1).
+1. Navigate to the Github repository at [here](https://github.com/samcat437/Milestone-2).
 2. Choose "Settings."
 3. Click on "Pages."
 4. Ensure the main branch and the root directory are selected.

@@ -3,70 +3,70 @@ let numCorrect = 0;
 
 const QUESTIONS = [{
     question: "What major key is this?",
-    image: `<img src="static/images/e-major.png">`,
+    image: `<img src="static/images/keys/e-major.png">`,
     options: ["A major", "C major", "E major", "F# major"],
     answer: "E major"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/f-major.png">`,
+    image: `<img src="static/images/keys/f-major.png">`,
     options: ["F major", "G major", "Eb major", "D major"],
     answer: "F major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/c-flat-major.png">`,
+    image: `<img src="static/images/keys/c-flat-major.png">`,
     options: ["Bb minor", "C minor", "Db minor", "Ab minor"],
     answer: "Ab minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/c-sharp-major.png">`,
+    image: `<img src="static/images/keys/c-sharp-major.png">`,
     options: ["C major", "E major", "F major", "C# major"],
     answer: "C# major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/g-flat-major.png">`,
+    image: `<img src="static/images/keys/g-flat-major.png">`,
     options: ["F minor", "D minor", "C minor", "Gb minor"],
     answer: "Gb minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/a-major.png">`,
+    image: `<img src="static/images/keys/a-major.png">`,
     options: ["D major", "A major", "B major", "F# major"],
     answer: "A major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/a-flat-major.png">`,
+    image: `<img src="static/images/keys/a-flat-major.png">`,
     options: ["B minor", "G minor", "E minor", "F minor"],
     answer: "F minor"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/b-flat-major.png">`,
+    image: `<img src="static/images/keys/b-flat-major.png">`,
     options: ["Ab minor", "B minor", "G minor", "C# minor"],
     answer: "G minor"
   },
 
   {
     question: "What major key is this?",
-    image: `<img src="static/images/b-major.png">`,
+    image: `<img src="static/images/keys/b-major.png">`,
     options: ["C# major", "D major", "B major", "A major"],
     answer: "B major"
   },
 
   {
     question: "What minor key is this?",
-    image: `<img src="static/images/e-flat-major.png">`,
+    image: `<img src="static/images/keys/e-flat-major.png">`,
     options: ["Bb minor", "C minor", "A minor", "F minor"],
     answer: "C minor"
   }
@@ -89,7 +89,7 @@ function startGame() {
   welcome.style.display = "none";
   questionContainer.classList.remove("hidden");
   buttonsContainer.classList.remove("hidden");
-  startButton.classList.add("hidden");
+  startButton.style.display = "none";
   submitButton.style.display = "none";
   nextButton.classList.add("hidden");
 

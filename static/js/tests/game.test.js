@@ -27,7 +27,7 @@ beforeAll(() => {
   document.close();
 });
 
-describe("DOM tests during nextQuestion function", () => {
+describe("DOM tests during newQuestion function", () => {
   test("question, options and image is populated from the questions array", () => {
     let image = document.getElementById("image-container");
     let question = document.querySelector("#question");
@@ -39,9 +39,9 @@ describe("DOM tests during nextQuestion function", () => {
       expect(options[i].innerText).toEqual(QUESTIONS[n].options[i]);
     };
   });
-  test("disabled attribute is added to the nextbutton", () => {
+  test("hidden class added to nextbutton", () => {
     newQuestion();
-    expect(document.getElementById("next").hasAttribute("disabled")).toBeTruthy();
+    expect(document.getElementById("next").classList).toContain("hidden");
   });
   test("class hidden is removed from option container id element to enable options to display", () => {
     newQuestion();
