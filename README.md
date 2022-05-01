@@ -157,7 +157,7 @@ The W3C Markup Validator, W3C CSS Validator and Jshint Services were used to che
 
 ## Automated Tests
 
-Automated Tests can be found in game1.test.js within the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that this is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. 
+Automated Tests can be found in game1.test.js within the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that this is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. View the test coverage [here](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/jest-coverage.png).
 
 I tested that DOM elements were appearing and disappearing as appropriate for my first three functions - startGame, readyQuestion, and newQuestion. I tested this with Jest and by using their [documentation](https://jestjs.io/docs/getting-started).
 
