@@ -14,7 +14,7 @@
    background-color: #FAF9F6;
  }
 
- @media only screen and (max-width: 1000px) {
+ @media only screen and (max-width: 768px) {
 
    .navbar-custom .navbar-brand,
    .navbar-custom .navbar-text {
@@ -27,10 +27,14 @@
    }
  }
 
- @media only screen and (min-width: 1000px) {
+ @media only screen and (min-width: 1024px) {
    #treble {
      height: 5rem;
      width: 2.5rem;
+   }
+
+   #game {
+     padding-top: 10%;
    }
  }
 
@@ -192,7 +196,7 @@
 
    #score {
      font-size: 1rem;
-     height: 2.25;
+     height: 2.25rem;
    }
 
    #nav-container {
@@ -204,18 +208,65 @@
      padding: 0px;
    }
 
-   .navbar-custom .navbar-nav .nav-link{
+   .navbar-custom .navbar-nav .nav-link {
      font-size: 2rem;
      color: #333;
    }
+
    .navbar-nav {
      flex-direction: row;
    }
+
+   .navbar-toggler {
+     margin-top: .2rem;
+   }
+
    li.nav-item {
      padding-right: 1rem;
    }
  }
- 
+
+ @media only screen and (max-width: 768px) {
+   #game-body {
+     position: relative;
+     padding-top: 4rem;
+   }
+
+   #score {
+     font-size: 1rem;
+     height: 2.25rem;
+   }
+
+   #nav-container {
+     position: absolute;
+     width: auto;
+   }
+
+   nav.navbar.navbar-custom.navbar-expand-lg.navbar-light {
+     padding: 1rem 0px;
+   }
+
+   #game-nav {
+     padding: 0px;
+   }
+
+   .navbar-custom .navbar-nav .nav-link {
+     font-size: 2rem;
+     color: #333;
+   }
+
+   .navbar-nav {
+     flex-direction: row;
+   }
+
+   .navbar-toggler {
+     margin-top: 0px;
+   }
+
+   li.nav-item {
+     padding-right: 1rem;
+   }
+ }
 
  .end-game {
    margin-top: 15%;
@@ -235,10 +286,108 @@
    font-size: 1.15rem;
  }
 
- /*not working for super large screen sizes  */
- @media only screen and (min-width: 2399px) {
-   #hello-container {
-     padding-top: 3.5rem;
+ /* Universal xxxl screens */
+ @media only screen and (min-width: 2560px) {
+  #hello-container {
+    /* https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/ */
+    background-image: url(../images/cloud-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 0;
+    padding-bottom: 38%;
+  }
+  #hello {
+    padding-top: 10%!important;
+  }
+  .lesson-body {
+    padding-top: 15%!important;
+  }
+  p {
+    font-size: 2rem;
+  }
+
+  #content h1 {
+    font-size: 5rem;
+  } 
+  h2 {
+    font-size: 4rem;
+  }
+   h1 {
+     font-size: 4rem;
+   }
+
+   h3 {
+     font-size: 3.5rem;
+   }
+
+   #welcome p {
+     font-size: 2rem;
+     padding-bottom: 2rem;
+   }
+
+   .option-container {
+     font-size: 2.5rem;
+     width: 50%;
+   }
+
+   #start #to-game {
+     font-size: 3rem;
+     height: 7rem;
+   }
+
+   .btn-primary,
+   .btn-secondary {
+     font-size: 2rem;
+     height: 5rem;
+   }
+
+   .checkactive {
+     font-size: 2rem;
+     height: 5rem;
+   }
+
+   #check:disabled {
+     font-size: 2rem;
+     height: 5rem;
+   }
+
+   #score {
+     font-size: 2rem;
+     width: 10rem;
+     height: 7rem;
+   }
+
+   #message {
+     font-size: 2rem;
+   }
+
+   #game-body {
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: 0;
+     padding-bottom: 65.89%;
+   }
+
+   #game {
+     padding-top: 15%;
+   }
+
+   .navbar {
+     padding-top: 6rem;
+     padding-bottom: 6rem;
+     padding-left: 2rem;
+   }
+
+   .navbar-custom .navbar-brand,
+   .navbar-custom .navbar-text {
+     font-size: 5rem;
+     padding-right: 2rem;
+   }
+
+   .navbar-custom .navbar-nav .nav-link {
+     font-size: 5rem;
+     padding-right: 2rem;
    }
  }
 
@@ -266,6 +415,10 @@
  h1,
  h2 {
    font-weight: 600;
+ }
+
+ .key-label {
+   font-family: 'Gochi Hand', cursive;
  }
 
  #explanation,

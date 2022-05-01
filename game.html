@@ -23,9 +23,9 @@
 
 <body id="game-body">
   <header>
-    <nav class="navbar navbar-custom navbar-expand-lg navbar-light">
+    <nav id="game-nav" class="navbar navbar-custom navbar-expand-lg navbar-light">
       <div id="nav-container" class="container-fluid">
-        <a class="navbar-brand d-none d-sm-block" href="index.html">
+        <a class="navbar-brand d-none d-lg-block" href="index.html">
           All About Key<img id="treble" src="static/images/treble.png" alt="treble clef image">ignatures
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -61,11 +61,11 @@
       </div>
     </div>
   </section>
-  <section class="container-fluid">
-    <div id="game" class="quiz-container row d-flex justify-content-center mb-2 mb-sm-none">
+  <section id="game" class="container-fluid">
+    <div class="quiz-container row d-flex align-items-center justify-content-center mb-2 mb-sm-none">
       <div id="image-container"></div>
       <h1 id="question" class="mb-1 mb-sm-4 hidden">Question</h1>
-      <div id="option-container" class="hidden row mb-sm-3 justify-content-center col-md-6 m3-5">
+      <div id="option-container" class="hidden row justify-content-center col-md-6 mx-3 mx-md-2">
         <div class="option-container row align-items-center justify-content-center m-1"></div>
         <div class="option-container row align-items-center justify-content-center m-1"></div>
         <div class="option-container row align-items-center justify-content-center m-1"></div>
@@ -76,8 +76,8 @@
     <div id="message" class="mb-1 mb-sm-3"></div>
     <div id="nav-buttons" class="container mb-3 hidden">
       <div id="score" class="row align-items-center justify-content-center">Score :<br></div>
-      <button type="button" class="btn btn-primary mt-2 mt-sm-4 mx-3" id="next">Next Question</button>
-      <button type="button" class="btn btn-primary mt-2 mt-sm-4 mx-3" id="submit">Submit</button>
+      <button type="button" class="btn btn-primary mt-2 mt-md-4 mx-3" id="next">Next Question</button>
+      <button type="button" class="btn btn-primary mt-2 mt-md-4 mx-3" id="submit">Submit</button>
       <button type="button" class="btn btn-secondary mt-2 mt-sm-4" id="check" disabled>Check Answer</button>
     </div>
     <div id="back-buttons" class="hidden mt-4">
