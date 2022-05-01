@@ -203,8 +203,19 @@
    nav.navbar.navbar-custom.navbar-expand-lg.navbar-light {
      padding: 0px;
    }
- }
 
+   .navbar-custom .navbar-nav .nav-link{
+     font-size: 2rem;
+     color: #333;
+   }
+   .navbar-nav {
+     flex-direction: row;
+   }
+   li.nav-item {
+     padding-right: 1rem;
+   }
+ }
+ 
 
  .end-game {
    margin-top: 15%;
