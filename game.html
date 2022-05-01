@@ -17,7 +17,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/static/images/favicon_io/site.webmanifest">
   <title>All About Key Signatures</title>
 </head>
 
@@ -62,7 +61,7 @@
     </div>
   </section>
   <section id="game" class="container-fluid">
-    <div class="quiz-container row d-flex align-items-center justify-content-center mb-2 mb-sm-none">
+    <div id="quiz-container" class="row d-flex align-items-center justify-content-center mb-2 mb-sm-none">
       <div id="image-container"></div>
       <h1 id="question" class="mb-1 mb-sm-4 hidden">Question</h1>
       <div id="option-container" class="hidden row justify-content-center col-md-6 mx-3 mx-md-2">
@@ -82,7 +81,7 @@
     </div>
     <div id="back-buttons" class="hidden mt-4">
       <a class="btn btn-primary mx-3" href="game.html" role="button">New Game</a>
-      <a class="btn btn-primary mx-3" href="lesson.html" role="button">Lesson</a>
+      <a id="lesson-button" class="btn btn-primary mx-3" href="lesson.html" role="button">Lesson</a>
     </div>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

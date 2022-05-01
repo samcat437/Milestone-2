@@ -123,6 +123,8 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/tree/ma
 
 [Jest](https://jestjs.io/) : Jest was run through the terminal through Git to run test cases on select functions during automated testing. See the testing section for more information.
 
+[Favicon.io](https://favicon.io/favicon-converter/) : This website allowed me to generate a favicon for the site.
+
 [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) : Chrome Dev tools were utilised for the Javascript console as well as to verify the site's responsiveness and visual presentation. 
 
 ### Fixed Bugs 
@@ -131,7 +133,9 @@ During the development process of the game section, I ran into several problems.
 
 I then was having trouble figuring out how to turn off the event listener once a selection had been made. I wrote it within the loop with removeEventListener, but this was not working. I finally worked out with my mentor's suggestion that I loop through each option and if the selected class is not present, add the disabled class which turns off pointer events in the CSS file. Once I figured out that could be controlled via CSS, it became a lot easier. 
 
-It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality within this context. The ability for the user to amend their answer could be something to explore in future features. 
+It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality within this context. The ability for the user to amend their answer could be something to explore in future features. For the last question, I would also like to remove the check answer button once the button is checked. This would require further logic and is why I omitted it for now. 
+
+While tidying up my project, I was running into trouble adding the hidden CSS class to my quiz-container id, which is a flex Bootstrap item. It turns out that they also override "display = none", so I had to change the text of this container rather than hiding it.
 
 ## Testing 
 
@@ -187,13 +191,13 @@ The webpage was tested regularly through development via Chrome developer tools.
 #### Game Page
 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
-    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20question%20display.png)
+    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button. [Game Page one question]()
 2. As a visiting user, I would like to click on a button in order to make a response. 
-    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20selection%20made.png)
+    * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made]()
 3. As a visiting user, I would like to check my answer.
-    * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20check%20answer.png)
+    * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer]()
 4. As a visiting user, I would like to view how many correct answers I had in the score section.   
-    * When a user selects an answer correctly, the score counter increments. [Game Page Score](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game%20score%20.png)
+    * When a user selects an answer correctly, the score counter increments. [Game Page Score]()
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
     * The user is able to scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
 
