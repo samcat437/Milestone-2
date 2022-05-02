@@ -137,6 +137,8 @@ It is worth noting that I would have perhaps preferred that the user is able to 
 
 While tidying up my project, I was running into trouble adding the hidden CSS class to my quiz-container id, which is a flex Bootstrap item. It turns out that they also override "display = none", so I had to change the text of this container rather than hiding it. I also realised that on very small screens on the game page that the menu was overlapping with the game question content. I added an extra bootstrap margin class for small screen sizes. I also realised that if the check answer button was clicked at the end instead of the submit button that the score would continue to increment. I wrote some logic to remove the button on the last question after the check answer button had been clicked. 
 
+On the game.html page I am still getting that module is not defined. I followed the Jest walkthrough video, but I suspect that there is a more current way with importing rather than using require. I have left this as is, however, as I did not have time to try out too many more solutions before the deadline. I tried adding "type = module" to the script link as suggested on Slack, but to no avail. This will be something to solve for future versions.
+
 ## Testing 
 
 ### Code Validation 
