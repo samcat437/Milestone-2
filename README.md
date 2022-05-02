@@ -20,8 +20,8 @@ View the live link [here](https://samcat437.github.io/Milestone-2/)
 
 ### Game Page
 
-1. As a visiting user, I would like to view the question displayed on page one at a time. 
-2. As a visiting user, I would like to click on a button in order to make a response. 
+1. As a visiting user, I would like to view the question displayed one page at a time. 
+2. As a visiting user, I would like to click on a button to make a response. 
 3. As a visiting user, I would like to check my answer.
 4. As a visiting user, I would like to view how many correct answers I had in the score section. 
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar. 
@@ -48,7 +48,7 @@ View the live link [here](https://samcat437.github.io/Milestone-2/)
 
  ### Lesson Page
 
- 1. The lesson page will be clearly layed out into sections.    
+ 1. The lesson page will be clearly laid out into sections.    
   * What is a key signature? 
   * How to find relative major or minor 
   * Must be memorized key signatures 
@@ -64,16 +64,16 @@ View the live link [here](https://samcat437.github.io/Milestone-2/)
 2. The user will then be able to view the first question. 
     Questions will consist of an image of a key signature and a question attached to inform the user whether it is a major or minor key signature they are identifying. 
 3. The user will be able to click on an option to select it.  
-4. The user will then click the check answer button for the selected answer to color code green for correct and red for incorrect. There will be a message to congratulate the user if correct, or commiserate if incorrect. If an incorrect answer is given, the correct answer will appear in the message.
+4. The user will then click the check answer button for the selected answer to colour code green for correct and red for incorrect. There will be a message to congratulate the user if correct or commiserate if incorrect. If an incorrect answer is given, the correct answer will appear in the message.
 5. The score counter will increment when a question is answered correctly. 
 7. When the game is finished and the submit button clicked, a message will appear to display the correct answer score and to congratulation/commiserate with the user. 
 8. The user will be urged to revisit the lessons page if the score is lower than 8/10.
 
 ## Design
 
-### Color Scheme 
+### Colour Scheme 
 
-Contrast colors of pale blue, pale pink and pale green dominant the scheme. The colors darken when buttons and options are hovered, as well as the buttons expanding. 
+Contrast colours of pale blue, pale pink and pale green dominant the scheme. The colours darken when buttons and options are hovered, as well as the buttons expanding. 
 
 ## Typography 
 
@@ -109,9 +109,9 @@ Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/tree/ma
 
 [Google Fonts](https://fonts.google.com/) : Google Fonts provided the font "Nanum Gothic" and "Gochi Hand" in order to customise and stylise the text. 
 
-[Colorzilla](https://www.colorzilla.com/gradient-editor/) : Colorzilla has an ultimate CSS gradient generator that I used to generate the CSS for the background colors of my lesson.html page. 
+[Colorzilla](https://www.colorzilla.com/gradient-editor/) : Colorzilla has an ultimate CSS gradient generator that I used to generate the CSS for the background colours of my lesson.html page. 
 
-[Coolors](https://coolors.co/) : Coolors is a colour palette generator I used to create colors that worked together for the site.
+[Coolors](https://coolors.co/) : Coolors is a colour palette generator I used to create colours that worked together for the site.
 
 [html-css-js.com](https://html-css-js.com/html/character-codes/) : I used this page to generate the emojis for my lesson.html page. 
 
@@ -167,7 +167,7 @@ Manual tests were conducted throughout the development process in order to under
 
 ## Manual Testing 
 
-The webpage was tested regularly through development via Chrome developer tools. The Github Pages link was tested on a number of devices including iPhone XR, iPad 2nd Gen, iPad Air 2, HP Envy Laptop, and Macbook Pro. I tested it on Chrome, Edge, Safari and Firefox. 
+The webpage was tested regularly through development via Chrome developer tools. The Github Pages link was tested on several devices including iPhone XR, iPad 2nd Gen, iPad Air 2, HP Envy Laptop, and Macbook Pro. I tested it on Chrome, Edge, Safari and Firefox. 
 
 ### Test Cases based on User Stories
 
@@ -182,7 +182,7 @@ The webpage was tested regularly through development via Chrome developer tools.
 #### Lesson Page
 
 1. As a visiting user, I would like to view content of the website. 
-    * The user is able to view the lesson content is a scrollable, narrative layout.
+    * The user can view the lesson content is a scrollable, narrative layout.
     [Lesson Page top](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/lesson-top.png)
 2. As a visiting user, I would like to navigate towards the quiz page. 
     * The user is invited to the game page via a button at the bottom of the lesson content. They can also skip to the game page via the navbar.
@@ -192,14 +192,14 @@ The webpage was tested regularly through development via Chrome developer tools.
 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
     * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button after checking my answer. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-next-question.png)
-2. As a visiting user, I would like to click on a button in order to make a response. 
+2. As a visiting user, I would like to click on a button to make a response. 
     * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-selection.png)
 3. As a visiting user, I would like to check my answer.
     * The user checks their answer by clicking on the click answer button. This highlights their selection either in green if correct or red if incorrect. If incorrect, the correct answer is written below the options. [Game Page Check Answer](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-answer.png)
 4. As a visiting user, I would like to view how many correct answers I had in the score section.   
     * When a user selects an answer correctly, the score counter increments. [Game Page Score](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-score-increment.png)
 5. As a visiting user, I would like to navigate back to the home or the lesson page at any time via the navbar.
-    * The user is able to scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
+    * The user can scroll up to access the navbar. I did not make the navbar sticky on this page because the user may have to scroll a bit in order to see the entire game area on their device, and I did not want the navbar to cut off the image or question at any point.
 
 ## Deployment 
 
