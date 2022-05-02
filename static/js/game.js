@@ -32,8 +32,8 @@ const QUESTIONS = [{
   {
     question: "What minor key is this?",
     image: `<img src="static/images/keys/g-flat-major.png">`,
-    options: ["F minor", "D minor", "C minor", "Gb minor"],
-    answer: "Gb minor"
+    options: ["F minor", "D minor", "C minor", "Eb minor"],
+    answer: "Eb minor"
   },
 
   {
@@ -177,7 +177,7 @@ function selectAnswer() {
         }
       });
     });
-  });
+  });  
 }
 
 /**
@@ -231,6 +231,13 @@ function checkAnswer() {
     nextButton.classList.remove("hidden");
   }
 
+  if (n === QUESTIONS.length && selection.classList.contains("correct")) {
+    checkButton.classList.add("hidden");
+  }
+
+  if (n === QUESTIONS.length && selection.classList.contains("incorrect")) {
+    checkButton.classList.add("hidden");
+  }
   score.innerHTML = `<div>Score: <br>${numCorrect} / ${QUESTIONS.length}</div>`;
 
   nextButton.addEventListener("click", readyQuestion);
@@ -258,7 +265,7 @@ function submit() {
   } else {
     quizContainer.innerHTML = `<div class="end-game p-5 mb-5">You scored ${numCorrect} / ${QUESTIONS.length}. Tap the lesson button to review how to identify the key signatures, and then try again!</div>`;
     backButtons.classList.remove("hidden");
-  };
+  }
 }
 
 window.addEventListener("DOMContentLoaded", () => {

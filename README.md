@@ -87,11 +87,11 @@ Images were used from the free site : [pixabay](https://pixabay.com) and then cr
 
 The nav bar was taken from this [one](https://pixabay.com/vectors/music-treble-clef-musical-symbol-39881/).
 
-The backgrounds were taken from these links : [index.html background](https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/) [game.html background](https://pixabay.com/vectors/clouds-pattern-wallpaper-sky-5930599/).
+The backgrounds were taken from these links : [index.html background](https://pixabay.com/vectors/cloud-speech-bubble-thinking-idea-146176/) and [game.html background](https://pixabay.com/vectors/clouds-pattern-wallpaper-sky-5930599/).
 
 ## Wireframes 
 
-Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/tree/main/docs/Wireframes).
+Wireframes can be viewed [here](https://github.com/samcat437/Milestone-2/blob/main/docs/Wireframes/keysignatures.pdf).
 
 ### Technologies
 
@@ -135,7 +135,7 @@ I then was having trouble figuring out how to turn off the event listener once a
 
 It is worth noting that I would have perhaps preferred that the user is able to toggle the selected class on and off before using the check answer button and that maybe the check answer button is a bit redundant in this case. I have not changed it at this point as my test cases check for its functionality within this context. The ability for the user to amend their answer could be something to explore in future features. For the last question, I would also like to remove the check answer button once the button is checked. This would require further logic and is why I omitted it for now. 
 
-While tidying up my project, I was running into trouble adding the hidden CSS class to my quiz-container id, which is a flex Bootstrap item. It turns out that they also override "display = none", so I had to change the text of this container rather than hiding it.
+While tidying up my project, I was running into trouble adding the hidden CSS class to my quiz-container id, which is a flex Bootstrap item. It turns out that they also override "display = none", so I had to change the text of this container rather than hiding it. I also realised that on very small screens on the game page that the menu was overlapping with the game question content. I added an extra bootstrap margin class for small screen sizes. I also realised that if the check answer button was clicked at the end instead of the submit button that the score would continue to increment. I wrote some logic to remove the button on the last question after the check answer button had been clicked. 
 
 ## Testing 
 
@@ -157,17 +157,15 @@ The W3C Markup Validator, W3C CSS Validator and Jshint Services were used to che
 
 ## Automated Tests
 
-Automated Tests can be found in game1.test.js within the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by mentor, who believes that this is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. View the test coverage [here](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/jest-coverage.png).
+Automated Tests can be found in game1.test.js within the static, js and test folders. I opted to test three important functions of the game, rather than all of them, as per the project requirements. I wrote the code first and the test cases after, as was recommended to me by my mentor, who believes that this is the right way to learn at my stage of development. Within a professional environment, a test driven development (TDD) approach would be preferable or required. 
 
-I tested that DOM elements were appearing and disappearing as appropriate for my first three functions - startGame, readyQuestion, and newQuestion. I tested this with Jest and by using their [documentation](https://jestjs.io/docs/getting-started).
+I tested that DOM elements were appearing and disappearing as appropriate for my first three functions - startGame, readyQuestion, and newQuestion. I tested this with Jest and by using their [documentation](https://jestjs.io/docs/getting-started). View my test coverage [here](https://github.com/samcat437/Milestone-2/blob/main/docs/Code-Validation/jest-coverage.png).
 
-During the writing of my test cases, I was struggling with my global let variable n, especially during writing test cases. n is the variable representing the index for the questions array which changes the questions as they populate the page and the user clicks the next question button. I was writing the test case on line 122 of game1.test.js which tests that when the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with n being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving n++ to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. 
-
-Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the use of the console as well to verify the site's responsiveness and visual presentation. 
+I struggled with my global let variable "n" while writing test cases. "n" is the variable representing the index for the questions array which changes the questions as they populate the page and the user clicks the next question button. I wrote the test case on line 122 of game1.test.js which tests that once the last question is reached, the next button will disappear and the submit button will appear. The test was not passing with "n" being incremented on line 152 of game1.js. I moved it to the selectAnswer function, but then this caused another test to fail. Moving "n++" to the end of the newQuestion block as well as rewriting the code so that when the second to last question was reached does the code execute solved these issues. Later on I rewrote this again to account for the last question being reached, not the second to last. The test continues to pass and I believe it is fine to include as a test case as it shows the development process.
 
 ## Manual Testing 
 
-The webpage was tested regularly through development via Chrome developer tools. The Github Pages link was tested on several devices including iPhone XR, iPad 2nd Gen, iPad Air 2, HP Envy Laptop, and Macbook Pro. I tested it on Chrome, Edge, Safari and Firefox. 
+Manual tests were conducted throughout the development process in order to understand how the DOM was being manipulated. Chrome Dev tools were utilised for the use of the console as well to verify the site's responsiveness and visual presentation. The Github Pages link was tested on several devices including iPhone XR, iPad 2nd Gen, iPad Air 2, HP Envy Laptop, and Macbook Pro. Colleagues at my work also tested it on their various devices and sent me screenshots of issues. Some had Huawei and Android devices. I tested it on Chrome, Edge, Safari and Firefox. 
 
 ### Test Cases based on User Stories
 
@@ -191,7 +189,7 @@ The webpage was tested regularly through development via Chrome developer tools.
 #### Game Page
 
 1. As a visiting user, I would like to view the question displayed on page one at a time. 
-    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button after checking my answer. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-next-question.png)
+    * After clicking the start game button, the user is displayed one question. The user knows there will be more questions because there is a next button after checking their answer. [Game Page one question](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-next-question.png)
 2. As a visiting user, I would like to click on a button to make a response. 
     * The user selects an answer by clicking it. They will know it is selected because it changes colour. [Game Page selection made](https://github.com/samcat437/Milestone-2/blob/main/docs/test-screenshots/game-selection.png)
 3. As a visiting user, I would like to check my answer.
